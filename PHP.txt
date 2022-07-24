@@ -1,0 +1,72 @@
+require("../db-connect.php");
+
+讀取篩選GET  寫入修改POST
+表單ALL(GET)>表單詳細>表單修改edit(POST)>doUplate
+
+if(!isset($_GET["search"])){
+}else{ 
+}
+
+//空值判斷
+if(empty($account) 
+
+//不顯示input帶資料 
+<input type="hidden" name="order_id" value=" "> 
+
+//一定要輸入內容
+required 
+
+//全部比數
+$userCount=$resultAll->num_rows;
+
+//資料分頁
+$page=$_GET["page"]; //第幾頁
+$perPage=4;//ㄧ頁要顯示幾筆
+$start=($page-1)*$perPage;
+
+//開始的筆數
+$startItem=($page-1)*$perPage+1;
+//結束的比數
+$endItem=$page*$perPage;
+if($endItem>$userCount)$endItem=$userCount;
+
+//分頁數計算
+$totalPage=ceil($userCount/$perPage); //無條件進位
+
+//JOIN語法
+$sql = "SELECT product.*, category.name AS category_name FROM product
+     JOIN category ON product.category_id = category.id"
+
+//LIMIT 顯示資料(第*筆,後面*筆)
+$sql="SELECT * FROM users WHERE valid=1 ORDER BY  $orderType LIMIT $start, 4";
+$result = $conn->query($sql);
+$userCount=$result->num_rows;
+
+$rows = $result->fetch_all(MYSQLI_ASSOC); //ㄧ次抓全部
+foreach($rows as $row){}
+
+while($row = $result->fetch_assoc()){} //單次抓取用while
+
+$now=date('Y-m-d H:i:s'); //取得時間
+WHERE order_date BETWEEN '$start' AND '$end' //時間區間篩選
+ORDER BY user_order.order_date DESC //排序
+
+//完全符合$模糊比對
+$sql="SELECT id, account, name, email, phone FROM users WHERE account = '$search'";
+$sql="SELECT id, account, name, email, phone FROM users WHERE account LIKE '%$search%'";
+
+//新增資料
+$sql="INSERT INTO users (account, password, create_time,valid) VALUES ('$account', '$password', '$now',1)";
+$conn->query($sql)
+$conn->close();
+
+//更新資料
+$sql="UPDATE users SET name='$name', phone='$phone', email='$email' WHERE id=$id"
+$conn->query($sql)
+$conn->close();
+
+//刪除資料
+$sql="DELETE FROM users WHERE id='$id'"
+//軟刪除
+$sql="UPDATE users SET valid=0 WHERE id='$id'";
+

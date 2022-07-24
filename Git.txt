@@ -1,0 +1,39 @@
+git config --global user.name "HuangRueiYu"
+git config --global user.email "b98170022@gmail.com"
+
+//改成GIT管理
+git init
+
+//更動
+git add . 
+git add <fileName>
+
+//儲存
+git commit -m "" 
+
+//上傳
+git push 
+
+//下載
+git pull 
+//下載 解決衝突
+git pull --no-rebase 
+
+//創建分支
+git branch <branchName>
+//切換分支
+git checkout <branchName>
+
+//協做檔案遠端下載
+git clone <link>
+ 
+---合併分支方法--
+//檢查更新
+git pull
+//切換回主支
+git checkout "main"
+//合併
+git merge "要合併的分支"
+
+
+

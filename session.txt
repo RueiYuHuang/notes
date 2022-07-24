@@ -1,0 +1,24 @@
+//使用前必輸入
+session_start();
+
+//清除全部內容
+session_destroy();
+
+//查看全部內容
+var_dump($_SESSION);
+
+//建議使用前判斷
+if(isset($_SESSION["name"])){}
+
+
+$user=[
+    "id"=>1,
+    "name"=>"Joe",
+    "email"=>"joe@test.com"
+];
+
+//設定
+$_SESSION["user"]=$user;
+
+//刪除單項
+unset($_SESSION["user"]
