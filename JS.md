@@ -199,7 +199,8 @@ let arr2 = arr1.filter(function(value,index){
 //arr2=[5,7,9];
 
 //字串轉陣列(不影響原陣列)
-    let str="The quick brown fox jumps over the lazy dog.";
-    let words=str.split(" ");
+let str="The quick brown fox jumps over the lazy dog.";
+let words=str.split(" ");
 //words=['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']	
+
 ```
