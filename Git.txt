@@ -4,12 +4,29 @@ git config --global user.email "b98170022@gmail.com"
 //改成GIT管理
 git init
 
-//更動
+//git 檔案狀態 是否更動
+git status
+git st 縮寫
+
+//看檔案變更
+git diff <fileName>
+
+//加入暫存
 git add . 
 git add <fileName>
+//取消暫存
+git rm --cached <fileName>
 
-//儲存
-git commit -m "" 
+
+//建立新版本
+git commit -m ""
+git ci 縮寫 
+//已加入的檔案建立新版本
+git commit -am ""
+
+
+//查看版本更新
+git log
 
 //上傳
 git push 
@@ -19,10 +36,14 @@ git pull
 //下載 解決衝突
 git pull --no-rebase 
 
+//查看分支
+git branch
+git br 縮寫
 //創建分支
 git branch <branchName>
 //切換分支
 git checkout <branchName>
+git switch <branchName>
 
 //協做檔案遠端下載
 git clone <link>
@@ -33,7 +54,21 @@ git pull
 //切換回主支
 git checkout "main"
 //合併
-git merge "要合併的分支"
+git merge <要合併的分支>
 
+
+---------------------------------
+.gitconfig 檔案加入&縮寫
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+	l = log --oneline --graph
+        la = log --all --oneline --decorate --graph
+[user]
+	name = RueiYuHuang
+	email = b98170022@gmail.com
 
 
