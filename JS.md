@@ -136,16 +136,6 @@ let arr3 =  arr.join("");
 let arr4 =  arr.join("-");
 //arr4="A-B-C-D-E"
 
-//將一個累加器及陣列中每項元素(由左至右)傳入回呼函式(不影響原陣列)
-let arr2 = arr.reduce(function(prev,next){
-    return prev+next;
-})
-//arr2="ABCDE"
-//(由右至左)
-let arr2 = arr.reduceRight(function(prev,next){
-    return prev+next;
-})
-//arr2="EDCBA"
 
 //原陣列反向排序
  arr.reverse();
@@ -183,14 +173,15 @@ arr.forEach(function(value,index){
 });
 //arr=["A1","B1","C1","D1","E1"];
 
-//產生新陣列 將陣列內的每個元素，皆傳入並執行給定的函式(不影響原陣列) 
-let arr2 = arr.map(function(value,index){
-    return value+1;
-});
-//arr=["A","B","C","D","E"];
-//arr2=["A1","B1","C1","D1","E1"];
+
+//字串轉陣列(不影響原陣列)
+let str="The quick brown fox jumps over the lazy dog.";
+let words=str.split(" ");
+//words=['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']
+
 
 //篩選陣列 return篩選條件(不影響原陣列)
+//用於刪除 某資料retuen XXX  !== XXX
 let arr1 = [1,3,5,7,9];
 let arr2 = arr1.filter(function(value,index){
     return value>=5;
@@ -198,9 +189,27 @@ let arr2 = arr1.filter(function(value,index){
 //arr1 = [1,3,5,7,9];
 //arr2=[5,7,9];
 
-//字串轉陣列(不影響原陣列)
-let str="The quick brown fox jumps over the lazy dog.";
-let words=str.split(" ");
-//words=['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']	
+//將一個累加器及陣列中每項元素(由左至右)傳入回呼函式(不影響原陣列)
+//也可用於比較找出最大值
+//轉成單一物件 起始值{}
+let arr2 = arr.reduce(function(prev,next){
+    return prev+next;
+})
+//arr2="ABCDE"
+//(由右至左)
+let arr2 = arr.reduceRight(function(prev,next){
+    return prev+next;
+})
+//arr2="EDCBA"
 
+//產生新陣列 將陣列內的每個元素，皆傳入並執行給定的函式(不影響原陣列) 
+//用於 對所有資料處理 也可修改某特定資料
+let arr2 = arr.map(function(value,index){
+    return value+1;
+});
+//arr=["A","B","C","D","E"];
+//arr2=["A1","B1","C1","D1","E1"];	
+
+//物件轉 物件陣列  先用Object.key取得物件KEY 再用.map(key)回傳新組成的物件 
+let newArr = Object.key(obj).map( (key) => { return ({newObject}) } )
 ```
