@@ -1,0 +1,126 @@
+1. git 安裝 https://git-scm.com/
+
+---------------------------------------
+2. nvm 安裝 https://github.com/nvm-sh/nvm
+
+打開 git bash 終端機
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+裝完之後，畫面上會出現
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+複製，編輯 ~/.bash_profile 貼上內容
+code ~/.bash_profile
+
+重開 git bash
+*************************************
+# 查詢 nvm 指令
+nvm ??
+
+nvm -v
+
+# 列出可以安裝的版本
+nvm ls-remote 16
+# windows版本
+nvm list available
+
+# 安裝最新版本號
+nvm install 16.16.0
+
+# 切換要使用的 node 版本
+nvm use 16.16.0
+
+# 確認目前執行的版本
+node -v
+
+# 列出你目前主機安裝的版本
+nvm ls
+# windows版本
+nvm list
+
+
+# 設定預設的版本
+nvm alias default 16.16.0
+******************************************
+# 使用npm管理套件會產生package.json 和 package-lock.json設定檔
+# 建立.gitignore 加入node_modules 防止git上傳
+$ npm init
+# 安裝某個 package
+$ npm i {package name}
+$ npm install {package name}
+
+# 會根據 package.json 來安裝套件
+$ npm i
+
+# 移除安裝過的套件
+$ npm uninstall {package name}
+
+# 列出專案中裝過的套件及其版本
+$ npm list
+
+# 只想看專案中的某一個套件的版本
+$ npm list axios
+
+# 查詢這個套件所有可安裝的版號
+$ npm view cowsay versions
+
+# 只要查某個套件最新的版號
+$ npm view cowsay version
+-----------------------------------------
+3 安裝 yarn
+
+npm install --global yarn
+-----------------------------------------
+4.用 Create React App 建立一個全新的 single-page
+
+npx create-react-app my-app
+cd my-app
+npm start
+-----------------------------------------
+5. 安裝 ESLint 與 Prettier 模組
+
+yarn add eslint-plugin-prettier prettier eslint-config-react-app eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks
+
+加入 eslint 與 prettier 設定檔案
+.eslintrc 與 .prettierrc 與 .prettierignore 與 .eslintignore 的設定檔，到專案的根目錄。
+----.eslintignore----
+build/
+node_modules/
+src/serviceWorker.js
+----.eslintrc----
+{
+    "extends": ["react-app"],
+    "plugins": ["prettier", "react-hooks"],
+    "rules": {
+      "prettier/prettier": "warn",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
+  }   
+----.prettierignore----
+package-lock.json
+node_modules/
+----.prettierrc----
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": true, //分號
+  "endOfLine": "auto",
+  "tabWidth":4, //縮排
+}
+-----------------------------------------
+6. 安裝 VS Code 中的 ESLint 與 Prettier 擴充
+https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+VS Code 設定(選單->喜好設定)
+
+"editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "eslint.alwaysShowStatus": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+    	
