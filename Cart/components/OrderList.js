@@ -49,7 +49,7 @@ function OrderList(props) {
                                         props.setCart(newCart)
                                     }}>-</a>
                                     <a href="#/" className="border">
-                                        {/* //商品數 */}
+                                        {/* 商品數 */}
                                         {data.count}
                                     </a>
                                     {/* 增加商品數 */}
