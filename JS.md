@@ -188,6 +188,41 @@ let arr2 = arr1.filter(function(value,index){
 });
 //arr1 = [1,3,5,7,9];
 //arr2=[5,7,9];
+let array = [
+    {id:1 ,age:20},
+    {id:2 ,age:21},
+    {id:3 ,age:22},
+    {id:4 ,age:25},
+    {id:5 ,age:25},
+    {id:6 ,age:20},
+    {id:7 ,age:25},
+    {id:8 ,age:23},
+    {id:9 ,age:25},
+    {id:10 ,age:22},
+    {id:11 ,age:22},
+    {id:12 ,age:21},
+]
+//篩選過濾重複一
+let newArr2 = array.reduce((prev,next,arr)=>{
+    // console.log('prev',prev.map((value)=>{value.age}).indexOf('22'));
+    console.log('find',prev.find((data)=> data.age === next.age));
+    if(prev.find((data)=> data.age === next.age)){
+        return prev
+    }
+    return [...prev,next]
+},[])
+console.log("newArr2",newArr2);
+//篩選過濾重複二
+let newArr3 = array.filter((value,index,arr)=>{
+    // console.log(prev);
+    console.log("findIndex",arr.findIndex((data)=>data.age == value.age));
+    console.log('arr',arr.map((data)=>data.age).indexOf(value.age));
+    console.log('index',index);
+    //找到的index === 目前的index 表示還未加進新陣列中
+    return arr.findIndex((data)=>data.age == value.age) === index
+    // return value.id !== 2
+})
+console.log("newArr3",newArr3);
 
 //將一個累加器及陣列中每項元素(由左至右)傳入回呼函式(不影響原陣列)
 //也可用於比較找出最大值
