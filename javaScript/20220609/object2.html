@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <style>
+        .list{
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let users=[
+            {
+                name: "Joe",
+                email: "joe@test.com",
+                phone: "0900000000"
+            },
+            {
+                name: "May",
+                email: "may@test.com",
+                phone: "0900000001"
+            },
+            {
+                name: "Jay",
+                email: "jay@test.com",
+                phone: "0900000002"
+            }
+        ];
+        // console.log(users)
+        // console.log(users[0])
+        for(let i=0; i<users.length; i++){
+            // console.log(users[i].name)
+            console.log(`${users[i].name}, email: ${users[i].email}, phone: ${users[i].phone}`)
+        }
+        console.log("----")
+
+        for(let user of users){
+            // console.log(user)
+            let content=`${user.name}, email: ${user.email}, phone: ${user.phone}`;
+            console.log(`${content}`)
+            // document.write(content+"<br>")
+            document.write("<div class='list'>"+content+"</div>")
+        }
+    </script>
+</body>
+</html>

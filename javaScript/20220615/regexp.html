@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    
+    <script>
+        const input="As I was going to Saint Ives going";
+        const re1=/going/
+        const re2=new RegExp("going")
+
+        console.log("--match--")
+        console.log(input.match(re1))
+        console.log("--search--")
+        console.log(input.search(re1))
+
+        console.log("--test--")
+        console.log(re1.test(input))
+        console.log("--exec--")
+        console.log(re1.exec(input))
+        console.log("--replace--")
+        console.log(input.replace("going", "walking"))
+        console.log(input.replace(/going/g, "walking"))
+
+    </script>
+</body>
+</html>

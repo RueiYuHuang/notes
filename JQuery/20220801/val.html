@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>val()</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <div class="py-2">
+            <button class="btn btn-info" id="getVal">getVal</button>
+            <button class="btn btn-info" id="setVal">setVal</button>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="input">
+        </div>
+        <h1 id="target"></h1>
+        <div class="py-2">
+            <button class="btn btn-info" id="getSelect">getSelect</button>
+            <button class="btn btn-info" id="setSelect">setSelect</button>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <select class="form-control" name="" id="cities">
+                        <option value="0">請選擇城市</option>
+                        <option value="1">台北市</option>
+                        <option value="2">新北市</option>
+                        <option value="3">桃園市</option>
+                        <option value="4">台中市</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select class="form-control" name="" id="">
+                        <option value="0">請選擇鄉鎮市區</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <h2 id="address">地址</h2>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $("#getVal").click(function(){
+            //elem.value
+            let content=$("#input").val();
+            // console.log(content)
+            $("#target").text(content)
+        })
+
+        $("#setVal").click(function(){
+            $("#input").val("new content")
+        })
+
+        $("#input").on("keyup", function(){
+            let content=$(this).val()
+            $("#target").text(content)
+        })
+
+        $("#getSelect").click(function(){
+            let city=$("#cities").val();
+            console.log(city)  
+        })
+        $("#setSelect").click(function(){
+            $("#cities").val(3)
+        })
+
+        $("#cities").change(function(){
+            let city=$(this).val();
+            // console.log(city)
+            let cityName=$(this).find(":selected").text();
+            console.log(cityName)
+            $("#address").text(cityName)
+        })
+    </script>
+  </body>
+</html>

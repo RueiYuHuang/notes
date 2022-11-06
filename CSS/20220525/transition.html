@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transition: background .5s, width .5s .5s, opacity .5s 1s;
+        }
+        .box:hover{
+            background: red;
+            width: 300px;
+            opacity: 0.5;
+            /* display: none; */
+        }
+        .container:hover .cube{
+            width: 300px;
+        }
+        .cube{
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            transition: .5s;
+        }
+        .linear{
+            /* transition: .5s; */
+            transition-timing-function: linear;
+        }
+        .ease-in{
+            transition-timing-function: ease-in;
+        }
+        .ease-out{
+            transition-timing-function: ease-out;
+        }
+        .ease-in-out{
+            transition-timing-function: ease-in-out;
+        }
+        .cubic{
+            transition-timing-function: cubic-bezier(.48,-0.91,.52,1.73);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="container">
+        <div class="cube">easing</div>
+        <div class="cube linear">linear</div>
+        <div class="cube ease-in">ease-in</div>
+        <div class="cube ease-out">ease-out</div>
+        <div class="cube ease-in-out">ease-in-out</div>
+        <div class="cube cubic">cubic</div>
+    </div>
+</body>
+</html>

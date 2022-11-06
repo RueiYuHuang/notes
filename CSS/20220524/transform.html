@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .overflow-hidden{
+            overflow: hidden;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background: pink;
+            transition: .5s;
+            float: left;
+        }
+        .box-wrap{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            float: left;
+            margin: 10px;
+        }
+        .box-wrap .box{
+            margin:0;
+        }
+        .translateX:hover{
+            transform: translateX(20px);
+        }
+        .translateY:hover{
+            transform: translateY(-20px);
+        }
+        .translate:hover{
+            transform: translate(-20px, 20px);
+        }
+        .rotate:hover{
+            transform: rotate(360deg);
+        }
+        .scaleX:hover{
+            transform: scaleX(1.2);
+        }
+        .scaleY:hover{
+            transform: scaleY(0.8);
+        }
+        .scale{
+            transform-origin: left top;
+        }
+        .scale:hover{
+            transform: scale(0.2);
+        }
+        .wrap-scale .box{
+            transform: scale(0);
+        }
+        .wrap-scale:hover .box{
+            transform: scale(1);
+        }
+        .wrap-slide .box{
+            transform: translateY(-150px);
+        }
+        .wrap-slide:hover .box{
+            transform: translateY(0);
+        }
+        .skewX:hover{
+            transform: skewX(-10deg);
+        }
+        .transform:hover{
+            transform: translateX(120px) rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box translateX">translateX</div>
+    <div class="box translateY">translateY</div>
+    <div class="box translate">translate</div>
+    <div class="box rotate">rotate</div>
+    <div class="box scaleX">scaleX</div>
+    <div class="box scaleY">scaleY</div>
+    <div class="box scale">scale</div>
+    <div class="box-wrap wrap-scale">
+        <div class="box"></div>
+    </div>
+    <div class="box-wrap wrap-slide overflow-hidden">
+        <div class="box"></div>
+    </div>
+    <div class="box skewX">skewX</div>
+    <div class="box transform">transform</div>
+
+</body>
+</html>

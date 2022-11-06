@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>List Check</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .active {
+            background: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkAll">
+                    </th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Joe</td>
+                    <td>joe@test.com</td>
+                    <td>0900000000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Joe</td>
+                    <td>joe@test.com</td>
+                    <td>0900000000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Joe</td>
+                    <td>joe@test.com</td>
+                    <td>0900000000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Joe</td>
+                    <td>joe@test.com</td>
+                    <td>0900000000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Joe</td>
+                    <td>joe@test.com</td>
+                    <td>0900000000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        let itemCount=$("tbody tr").length;
+        // console.log(itemCount)
+
+        $("#checkAll").click(function(){
+            let checked=$(this).prop("checked")
+            if(checked){
+                $("tbody :checkbox").prop("checked", true)
+                $("tbody tr").addClass("active")
+            }else{
+                $("tbody :checkbox").prop("checked", false)
+                $("tbody tr").removeClass("active")
+            }
+        })
+
+        $("tbody :checkbox").click(function () {
+            let checked = $(this).prop("checked")
+            let checkedCount=$("tbody :checked").length;
+            // console.log(checkedCount)
+            if(itemCount===checkedCount){
+                $("#checkAll").prop("checked", true)
+            }else{
+                $("#checkAll").prop("checked", false)
+            }
+
+            if (checked) {
+                $(this).closest("tr").addClass("active")
+            } else {
+                $(this).closest("tr").removeClass("active")
+            }
+        })
+    </script>
+</body>
+
+</html>

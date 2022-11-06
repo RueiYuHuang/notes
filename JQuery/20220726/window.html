@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>window</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            height: 300vh;
+            transition: .4s;
+        }
+        .pink{
+            background: pink;
+        }
+        .img1{
+            width: 200px;
+            position: absolute;
+            top:500px;
+            transition: .4s;
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        .outside-box{
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+        .inside-box{
+            width: 900px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="outside-box" id="outsideBox">
+        <div class="inside-box"></div>
+    </div>
+
+      <img id="img1" class="img1" src="/images/01.png" alt="">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function(){
+            // console.log("scroll")
+            let scrollTop=$(this).scrollTop();
+            console.log(scrollTop)
+            if(scrollTop>500){
+                $("body").css("background", "pink")
+            }else{
+                $("body").css("background", "none")
+            }
+
+            if(scrollTop>300){
+                $("#img1").css({
+                    opacity: 1,
+                    transform: "translateY(0)"
+                })
+            }
+        })
+
+        $("#outsideBox").scroll(function(){
+            let scrollLeft=$(this).scrollLeft();
+            console.log(scrollLeft)
+        })
+    </script>
+  </body>
+</html>

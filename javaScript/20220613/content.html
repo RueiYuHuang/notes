@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <style>
+        h1 span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="getContent">getContent</button>
+        <button id="setContent">setContent</button>
+        <button id="getText">getText</button>
+        <button id="setText">setText</button>
+        <button id="getHTML">getHTML</button>
+        <button id="setHTML">setHTML</button>
+
+    </div>
+    <h1 id="source"><span>Hello</span>          World</h1>
+    <script>
+        let getContentBtn=document.querySelector("#getContent")
+        let setContent=document.querySelector("#setContent")
+        let getTextBtn=document.querySelector("#getText")
+        let setTextBtn=document.querySelector("#setText")
+        let getHTMLBtn=document.querySelector("#getHTML")
+        let setHTMLBtn=document.querySelector("#setHTML")
+
+
+        // let sourceContent=document.querySelector('#source')
+        let sourceContent=document.getElementById("source")
+
+
+        getContentBtn.onclick=function(){
+            // console.log("click")
+            let content=sourceContent.textContent;
+            console.log(content)
+        }
+        setContent.onclick=function(){
+            sourceContent.textContent="New Content"
+        }
+
+        getTextBtn.onclick=function(){
+            // console.log(sourceContent)
+            let content=sourceContent.innerText;
+            console.log(content)
+        }
+
+        setTextBtn.onclick=function(){
+            // sourceContent.innerText="New Content";
+            sourceContent.innerText="<span>New</span> Content";
+        }
+
+        getHTMLBtn.onclick=function(){
+            let content=sourceContent.innerHTML;
+            console.log(content)
+        }
+    </script>
+</body>
+</html>

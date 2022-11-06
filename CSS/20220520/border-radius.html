@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Radius</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: rgb(19, 114, 204);
+            margin:10px; 
+            float: left;
+        }
+        .box2{
+            width: 120px;
+            height: 120px;
+            background: red;
+            margin: 10px;
+            border-radius: 10px 20px 30px 40px;
+        }
+        .box3{
+            width: 120px;
+            height: 120px;
+            background: red;
+            margin: 10px;
+            border-radius: 10px 20px 30px;
+        }
+        .rect{
+            width: 150px;
+        }
+        .radius1{
+            border-radius: 20px;
+        }
+        .radius2{
+            border-radius: 10px 20px 30px 40px;
+        }
+        .radius3{
+            border-radius: 10px 20px 30px;
+        }
+        .radius4{
+            border-radius: 10px 40px;
+        }
+        .radius5{
+            border-radius: 20%;
+        }
+        .radius6{
+            border-radius: 100% 0 0 0;
+        }
+        .radius7{
+            border-radius: 50%;
+        }
+        .radius8{
+            border-radius: 100% 0;
+        }
+        .radius9{
+            border-radius: 20px/40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box radius1 rect"></div>
+    <div class="box radius2"></div>
+    <div class="box radius3"></div>
+    <div class="box radius4"></div>
+    <div class="box radius5 rect"></div>
+    <div class="box radius6"></div>
+    <div class="box radius7"></div>
+    <div class="box radius8"></div>
+    <div class="box radius9"></div>
+
+</body>
+</html>

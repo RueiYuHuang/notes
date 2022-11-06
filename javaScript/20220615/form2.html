@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- ajax, fetch, axios -->
+        <form action="target.html" >
+            <div class="mb-2">
+                <label for="">Name</label>
+                <input type="text" name="name" id="name" class="form-control">
+                <div class="text-danger" id="nameErr"></div>
+            </div>
+            <div class="mb-2">
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" class="form-control">
+                <div class="text-danger" id="emailErr"></div>
+            </div>
+            <div class="mb-2">
+                <label for="">Password</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+            <button class="btn btn-info" type="submit" id="send">送出</button>
+        </form>
+    </div>
+
+
+    <script>
+        const form=document.querySelector("form")
+        const send = document.querySelector("#send")
+        const nameErr = document.querySelector("#nameErr")
+        const email = document.querySelector("#email")
+        const emailErr = document.querySelector("#emailErr")
+
+        const reEmail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+        send.addEventListener("click", function (e) {
+            e.preventDefault();
+            let nameVal = document.querySelector("#name").value;
+            let emailVal = email.value;
+
+            nameErr.innerText = "";
+            emailErr.innerText = "";
+
+            if (nameVal === "") {
+                //   console.log("請填寫名稱")
+                nameErr.innerText = "請填寫名稱"
+                return;
+            }
+            if (emailVal === "") {
+                emailErr.innerText = "請填寫 email";
+                return;
+            }
+
+            //   if(reEmail.test(emailVal)){
+
+            //   }else{
+            //     emailErr.innerText="請輸入正確的 email 格式";
+            //     return;
+            //   }
+
+            if (!reEmail.test(emailVal)) {
+                emailErr.innerText = "請輸入正確的 email 格式";
+                return;
+            }
+
+            form.submit();
+            // console.log(nameVal)
+
+        })
+    </script>
+</body>
+
+</html>

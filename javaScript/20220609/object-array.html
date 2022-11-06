@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Array</title>
+</head>
+
+<body>
+    <script>
+        let fruit = ["apple", "banana", "peach", "melon"];
+
+        console.log("--forEach--")
+        fruit.forEach(function (item, index, array) {
+            console.log(`${index}: ${item}`)
+            // console.log(array)
+        })
+
+        let people = [
+            {
+                name: 'Jay',
+                like: 'apple',
+                gender: 'male',
+                //genderTw: '男性'
+                age: 18
+                //adault: true
+            },
+            {
+                name: 'Sarah',
+                like: 'banana',
+                gender: 'female',
+                age: 24
+            },
+            {
+                name: 'Tom',
+                like: 'orange',
+                gender: 'male',
+                age: 1
+            },
+            {
+                name: 'Jacy',
+                like: 'orange',
+                gender: 'female',
+                age: 3
+            }
+        ];
+        
+        // console.log(people)
+        people.forEach(function(user){
+            // console.log(user)
+            console.log(`${user.name} likes ${user.like}`)
+        })
+
+        console.log("--filter--")
+        let adaultUsers=people.filter(function(user){
+            return user.age>=18;
+        })
+        console.log(adaultUsers)
+        adaultUsers.forEach(function(user){
+            let content=`${user.name} is adault.`;
+            console.log(`${content}`)
+            document.write(`<div>${content}</div>`)
+        })
+
+        let products=[
+            {
+                id: 1,
+                name: "Spiderman",
+                price: 500
+            },
+            {
+                id: 2,
+                name: "Batman",
+                price: 5000
+            },
+            {
+                id: 3,
+                name: "Superman",
+                price: 1200
+            },
+            {
+                id: 4,
+                name: "Woder Woman",
+                price: 1500
+            }
+        ]
+
+        let productFilter=products.filter(function(product){
+            return product.price>=1000;
+        });
+        console.log(productFilter)
+
+        console.log("--find--")
+        let userFind=people.find(function(user){
+            //不存在會回傳 undefined
+            return user.name==="Peter";
+        })
+        console.log(userFind)
+
+        let userFindAdault=people.find(function(user){
+            //不存在會回傳 undefined
+            return user.age>=18;
+        })
+        console.log(userFindAdault)
+
+        let productNo1=products.find(function(product){
+            return product.id===1;
+        })
+        console.log(productNo1)
+
+        console.log("--map--")
+        let poepleDescription=people.map(function(user){
+            return `${user.name} is ${user.gender}.`;
+        })
+        console.log(poepleDescription);
+
+        //不建議這麼用
+        let peopleLikeOrange=people.map(function(user){
+            // return user.like==="orange";
+            if(user.like==="orange"){
+                return user;
+            }else{
+                return false;
+            }
+        })
+        console.log(peopleLikeOrange)
+
+        let peopleMap=people.map(function(user){
+            // let userMap=user;
+            // let userMap={
+            //     name: user.name,
+            //     age: user.age
+            // }
+
+            let userMap=user;
+            if(user.gender==="male"){
+                userMap.genderTw="男性";
+            }else{
+                userMap.genderTw="女性";
+            }
+            if(user.age>=18){
+                userMap.adault=true;
+            }else{
+                userMap.adault=false;
+            }
+            return userMap;
+        });
+        console.log(peopleMap)
+
+        let locations=[
+            {
+                name: "",
+                lat: 0,
+                lng: 0
+                // distance: 11m
+            }
+        ]
+
+
+    </script>
+</body>
+
+</html>

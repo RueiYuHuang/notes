@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background: lightblue;
+            margin: 10px auto;
+            /* float: left; */
+            transition: 0.4s;
+        }
+        .shadow1{
+            box-shadow: 10px 10px 10px #000;
+        }
+        .shadow2{
+            box-shadow: -10px -10px 20px blue;
+        }
+        .shadow3{
+            box-shadow: 0 0 20px rgb(34, 85, 195);
+        }
+        .shadow4:hover{
+            box-shadow: 0 0 20px rgb(34, 85, 195);
+        }
+        .shadow5{
+            box-shadow: 0 0 20px 10px rgb(34, 85, 195);
+        }
+        .shadow6{
+            box-shadow: 0 0 20px rgb(34, 85, 195) inset;
+        }
+        .shadow7{
+            box-shadow: -10px 0 10px red, 10px 0 10px orange;
+        }
+        .shadow8:hover{
+            box-shadow: -150px 0 0 red, 150px 0 0 yellow, 0 -150px 0 green, 0 150px 0 blue;
+        }
+        .shadow9{
+            background: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 20px red inset, 0 0 50px orange inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="box shadow1"></div>
+    <div class="box shadow2"></div>
+    <div class="box shadow3"></div>
+    <div class="box shadow4"></div>
+    <div class="box shadow5"></div>
+    <div class="box shadow6"></div>
+    <div class="box shadow7"></div>
+    <div class="box shadow8"></div>
+    <div class="box shadow9"></div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+</head>
+<body>
+    <div>
+        <button id="getContent">getContent</button>
+        <button id="setContent">setContent</button>
+    </div>
+    <h1 id="source">Hello World</h1>
+    <script>
+        let getContentBtn=document.querySelector("#getContent")
+        let setContent=document.querySelector("#setContent")
+        let sourceContent=document.querySelector('#source')
+        getContentBtn.onclick=function(){
+            // console.log("click")
+            let content=sourceContent.textContent;
+            console.log(content)
+        }
+        setContent.onclick=function(){
+            sourceContent.textContent="New Content"
+        }
+    </script>
+</body>
+</html>

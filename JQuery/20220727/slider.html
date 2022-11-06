@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Slider</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.min.css">
+    <style>
+        .wrapper{
+            max-width: 800px;
+            height: 400px;
+            margin:0 auto;
+        }
+        .slider-wrap{
+            /* width: 800px; */
+            height: 400px;
+            background: #000;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .sliders{
+            left:0px;
+            transition: .4s;
+        }
+        .sliders li{
+            height: 400px;
+            width: 800px;
+        }
+        .sliders li img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pages{
+            bottom:12px;
+            width: 100%;
+            justify-content: center;
+            margin:0;
+        }
+        .pages li{
+            border: 1px solid #fff;
+            width: 36px;
+            height: 10px;
+            margin: 0 4px;
+        }
+        .pages li:hover{
+            background: #fff;
+        }
+        .go-btn{
+            position: absolute;
+            cursor: pointer;
+            top:0;
+            height: 100%;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s;
+            opacity: .6;
+        }
+        .go-btn:hover{
+            opacity: 1;
+        }
+        .go-btn i{
+            color: #fff;
+            font-size: 20px;
+        }
+        .go-next{
+            right: 0;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="wrapper" id="wrapper">
+        <div class="slider-wrap position-relative">
+            <ul class="list-unstyled sliders position-absolute d-flex" id="sliders">
+                <li><img src="/images/slide1.jpeg" alt=""></li>
+                <li><img src="/images/slide2.jpeg" alt=""></li>
+                <li><img src="/images/slide3.jpeg" alt=""></li>
+                <li><img src="/images/slide4.jpeg" alt=""></li>
+            </ul>
+            <ul class="list-unstyled pages d-flex position-absolute" id="pages">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a class="go-btn go-prev" role="button" id="goPrev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <a class="go-btn go-next" role="button" id="goNext">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        let slideWidth=$("#wrapper").width();
+        // console.log(slideWidth)
+        let slideIndex=0;
+        let slideCount=$("#sliders li").length;
+        let lastIndex=slideCount-1;
+        // console.log(lastIndex)
+
+        $("#sliders li").width(slideWidth);
+
+        $(window).resize(function(){
+            slideWidth=$("#wrapper").width();
+            $("#sliders li").width(slideWidth);
+            goSlide();
+        })
+
+        $("#pages li").eq(slideIndex).css("background", "#fff");
+        $("#pages li").mouseenter(function(){
+            // console.log("enter")
+            slideIndex=$(this).index();
+            // console.log(slideIndex)
+            // let slideMove=0-(slideIndex * 800);
+            // // console.log(slideMove)
+            // $("#sliders").css("left", slideMove)
+            // $("#pages li").eq(slideIndex).css("background", "#fff").siblings().css("background", "none");
+            goSlide();
+        })
+        function goSlide(){
+            if(slideIndex<0)slideIndex=lastIndex;
+
+            if(slideIndex>=slideCount)slideIndex=0;
+
+            let slideMove=0-(slideIndex * slideWidth);
+            $("#sliders").css("left", slideMove)
+            $("#pages li").eq(slideIndex).css("background", "#fff").siblings().css("background", "none");
+        }
+
+        $("#goPrev").click(function(){
+            // console.log("prev")
+            // slideIndex=slideIndex-1;
+            slideIndex--;
+            goSlide();
+        })
+        $("#goNext").click(function(){
+            // console.log("prev")
+            // slideIndex=slideIndex-1;
+            slideIndex++;
+            goSlide();
+        })
+    </script>
+  </body>
+</html>

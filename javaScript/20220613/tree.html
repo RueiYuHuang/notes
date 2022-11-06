@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+    <style>
+        li.first{
+            background: lightblue;
+        }
+        li.last{
+            background: lightgreen;
+        }
+        li.prev{
+            background: pink;
+        }
+        li.next{
+            background: lemonchiffon;
+        }
+    </style>
+</head>
+
+<body>
+    <div title="titleWrap">
+        <div class="box" id="box" title="box"><img 
+            id="img" src="/images/1.png" alt=""></div>
+    </div>
+    <ul id="list"><li>item 1</li><li>item 2</li><li id="item">item 3</li><li>item 4</li><li>item 5</li></ul>
+
+
+    <script>
+        //parentNode
+        let img=document.querySelector("#img");
+
+        console.log(img.parentNode.title)
+
+        //childNode
+        let box=document.querySelector("#box")
+        let imgSrc=box.childNodes[0].src;
+        console.log(imgSrc)
+
+        //firstChild, lastChild
+        let list=document.querySelector("#list")
+        list.firstChild.className="first"
+        list.lastChild.className="last"
+
+        //previousSibling, nextSibling
+        let item=document.querySelector("#item")
+        item.previousSibling.className="prev";
+        item.nextSibling.className="next";
+
+    </script>
+</body>
+
+</html>

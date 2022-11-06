@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text overflow</title>
+    <style>
+        .text-truncate{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .card{
+            padding:10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            width: 220px;
+            margin: 10px;
+            float:left;
+        }
+        /* .card h3{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        } */
+        .card p{
+            overflow:hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3 class="text-truncate"
+        title="廖老大吃驚女兒交男友　怒吼「睡我女兒，想打斷他腿」！　「準女婿」職業曝光掀熱議"
+        >廖老大吃驚女兒交男友　怒吼「睡我女兒，想打斷他腿」！　「準女婿」職業曝光掀熱議</h3>
+        <p>槓上中國網紅「杰尼龜」，還打造台灣「打龜號」走紅的賽車手廖老大，過去女兒廖芸曾在直播中曝光，美貌讓網友直接「半路認岳父」，狂喊廖老大爸！不過三月時廖老大還曾說女兒單身，沒想到近來對他來說可能是個噩耗，因為女兒交男友了，廖老大還透露全家因此跑到女兒男友上班的超商偷看，還透露自己一度氣到想打斷對方的腿！</p>
+    </div>
+    <div class="card">
+        <h3 class="text-truncate"
+        title="10萬人PCR「已送未驗」！他一圖揭開指揮中心「不敢面對的2個事實」"
+        >10萬人PCR「已送未驗」！他一圖揭開指揮中心「不敢面對的2個事實」</h3>
+        <p>昨天新增本土79441例，確診人數增加的同時，國內篩檢量的壓力也大增，「宅神」朱學恒在臉書引用一張照片，怒轟指揮中心不敢面對的兩個事實，「別再吹偽高原期。」</p>
+    </div>
+</body>
+</html>

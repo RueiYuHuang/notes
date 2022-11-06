@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        .wrapper {
+            max-width: 640px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper ">
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>品名</th>
+                    <th>單價</th>
+                    <th width="200px">數量</th>
+                    <th>小計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>蘋果</td>
+                    <td class="price text-right">20</td>
+                    <td>
+                        <input type="number" class="form-control text-right number"
+                        min="0" value="1">
+                    </td>
+                    <td class="text-right">
+                        <span class=" s_price"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>香蕉</td>
+                    <td class="price text-right">16</td>
+                    <td>
+                        <input type="number" class="form-control number text-right" min="0" value="1">
+                    </td>
+                    <td class="text-right">
+                        <span class="s_price"></span>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="text-right">
+                        總價:
+                        <span id="total">0</span>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- container -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+        
+        cart_count();
+        $(".number").on("keyup change", function(){
+            // let amount=Number($(this).val());
+            // let item=$(this).closest("tr")
+            // let price=Number(item.find(".price").text());
+            // console.log(price)
+            // console.log(amount)
+            // let subtotal=price*amount;
+            // item.find(".s_price").text(subtotal)
+            // console.log(subtotal)
+            cart_count();
+            
+        })
+
+        function cart_count(){
+            let total=0;
+            $("tbody tr").each(function(){
+                let item=$(this);
+                let amount=Number(item.find(".number").val());
+                let price=Number(item.find(".price").text())
+                let subtotal=amount*price;
+                // console.log(subtotal)
+                item.find(".s_price").text(subtotal)
+                total+=subtotal;
+            })
+            $("#total").text(total)
+        }
+    </script>
+</body>
+
+</html>

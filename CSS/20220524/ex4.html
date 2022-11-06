@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* elem 標籤 */
+        body{
+            background: #ccc;
+            font-family: Arial, Helvetica, sans-serif;
+            /* height: 2000px; */
+        }
+        /* 模組 */
+        .object-cover{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 其他 css */
+        .card{
+            /* display: block; */
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px #999;
+            width: 240px;
+            margin: 10px auto;
+            /* padding: 15px; */
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Pacifico', cursive;
+        }
+        .banner{
+            height: 100px;
+            background: url("/CSS3/images/light.jpg") center center;
+            background-size: cover;
+            
+        }
+        .avatar{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin:0 0 0 -60px;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+        }
+        .avatar img{
+            /* width: 100%; */
+        }
+        /* .card h3, .card p{
+            text-align: center;
+        } */
+        .content{
+            padding-top: 32px;
+            border: 20px solid transparent;
+            border-image: url("/CSS3/images/border-image2.png") 20 round;
+        }
+        .card h3{
+            padding-bottom: 15px;
+            border-bottom: 1px solid #aaa;
+        }
+        .card p{
+            color: #999;
+        }
+        .button{
+            display: block;
+            padding: 6px 0;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cc0000+0,960000+100 */
+background: rgb(204,0,0); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(204,0,0,1) 0%, rgba(150,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(204,0,0,1) 0%,rgba(150,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(204,0,0,1) 0%,rgba(150,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#960000',GradientType=0 ); /* IE6-9 */
+
+        }
+        .button:hover{
+            background: rgba(150,0,0,1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="banner">
+
+        </div>
+        <figure class="avatar">
+            <img class="object-cover" src="/CSS3/images/dr_strange.jpg" alt="">
+        </figure>
+        <div class="content">
+            <h3>Dr. Strange</h3>
+            <p>Hello, I'm Steve Strange.</p>
+            <a class="button" role="button">Follow Me</a>
+        </div>
+    </div>
+</body>
+</html>

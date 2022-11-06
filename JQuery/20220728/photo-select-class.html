@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Photo select</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box{
+            --width: 120px;
+            width: var(--width);
+            height: var(--width);
+            margin: 5px;
+            border: 4px solid transparent;
+        }
+        .box img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .box.active{
+            border: 4px solid red;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+
+        <div class="py-2 d-flex justify-content-center">
+            <div class="box">
+                <img src="/images/pic1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="/images/pic2.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="/images/pic3.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="/images/pic4.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="/images/pic5.jpg" alt="">
+            </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(".box").click(function(){
+            // console.log("click");
+            // $(this).css("border", "4px solid red")
+            // .siblings().css("border", "4px solid transparent")
+
+            $(this).addClass("active")
+            .siblings().removeClass("active")
+
+        })
+    </script>
+  </body>
+</html>

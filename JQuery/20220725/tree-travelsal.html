@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tree Travelsal</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        td{
+            transition: .5s;
+        }
+        .box{
+            --box-width: 32px;
+            width: var(--box-width);
+            height: var(--box-width);
+            background: pink;
+            margin: 5px;
+            display: inline-block;
+            transition: .4s;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        // elem.children[i]
+        // $("td").children(".box").css("background", "red");
+        // $("td .box").css("background", "red");
+
+        $("td").click(function(){
+            // console.log("click")
+            // $(".box").css("background", "red")
+            // $(this).css("background", "lightblue");
+            // $(this).children(".box").css("background", "red");
+
+            // $(this).find(".box").css("background", "red").css("border-radius", "50%");
+
+            // $(this).find(".box").css(
+            //     {
+            //         "background": "red",
+            //         "border-radius": "50%"
+            //     }
+            // );
+
+        })
+
+        $(".box").click(function(){
+            // $(this).parent().css('background', 'lightblue');
+
+            // $(this).parents().css('background', 'lightblue');
+
+            // $(this).parentsUntil("tr").css('background', 'lightblue');
+
+            $(this).closest("tr").css("background", "lightblue")
+
+        })
+
+    </script>
+  </body>
+</html>

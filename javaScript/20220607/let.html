@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+
+<body>
+    <script>
+        //全域變數
+        let a = 10;
+
+        if (true) {
+            //let 區塊作用域
+            //區域變數
+            let b = 5;
+            console.log("local b", b)
+            //修改全域變數
+            // a=15;
+
+            //區域變數
+            let a=16;
+            console.log("local a", a)
+
+            //全域變數
+            c=25;
+        }
+
+        console.log("global a", a)
+        // console.log("b", b)
+        console.log("global c", c)
+    </script>
+</body>
+
+</html>

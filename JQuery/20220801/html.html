@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HTML</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1 span{
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="py-2">
+            <div class="btn btn-info" id="getText">getText</div>
+            <div class="btn btn-info" id="setText">setText</div>
+        </div>
+        <h1 id="source">Hello World</h1>
+        <div class="py-2">
+            <div class="btn btn-info" id="getHtml">getHtml</div>
+            <div class="btn btn-info" id="setHtml">setHtml</div>
+        </div>
+        <h1 id="htmlSource"><span>Hello</span> World</h1>
+        <h2>attr()</h2>
+        <div class="py-2">
+            <button class="btn btn-info" id="getAttr">getAttr</button>
+            <button class="btn btn-info" id="setAttr">setAttr</button>
+        </div>
+        <a id="link" href="https://www.google.com" title="google">google</a>
+        <div class="py-2">
+            <button class="btn btn-info" id="changePic">change pic</button>
+        </div>
+        <img id="img" src="/images/01.png" alt="">
+        <h2>.prop()</h2>
+        <div class="py-2">
+            <button class="btn btn-info" id="getChecked">getChecked</button>
+            <button class="btn btn-info" id="setChecked">setChecked</button>
+            <button class="btn btn-info" id="getDisabled">getDisabled</button>
+        </div>
+        <input type="checkbox" id="checkbox"  >
+        <div class="py-2">
+            <button class="btn btn-info" type="submit" id="go" disabled>go</button>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        // const obj={
+        //     img: "/images/01.png",
+        //     changePic(){
+
+        //     }
+        // }
+
+        $("#getText").click(function(){
+            //innerText
+            let content=$("#source").text();
+            console.log(content)
+        })
+
+        $("#setText").click(function(){
+            $("#source").text("new content");
+        })
+
+        $("#getHtml").click(function(){
+            //elem.innerHtml
+            let content=$("#htmlSource").html()
+            console.log(content)
+        })
+
+        $("#setHtml").click(function(){
+            $("#htmlSource").html("<span>New</span> content");
+        })
+
+        $("#getAttr").click(function(){
+            //elem.href
+            let url=$("#link").attr("href")
+            console.log(url)
+            let title=$("#link").attr("title")
+            console.log(title)
+        })
+
+        $("#setAttr").click(function(){
+            // $("#link").attr("href", "https://www.facebook.com")
+            // $("#link").attr("title", "facebook")
+            // $("#link").text("facebook")
+
+            $("#link").text("facebook").attr({
+                title: "facebook",
+                href: "https://www.facebook.com"
+            })
+        })
+
+        
+        $("#changePic").click(function(){
+            $("#img").attr("src", "/images/02.png")
+        })
+
+        $("#getChecked").click(function(){
+            let checked=$("#checkbox").prop("checked")
+            console.log(checked)
+        })
+
+        $("#setChecked").click(function(){
+            $("#checkbox").prop("checked", true)
+        })
+
+        $("#getDisabled").click(function(){
+            let disabled=$("#go").prop("disabled")
+            console.log(disabled)
+        })
+
+        $("#checkbox").click(function(){
+            let checked=$(this).prop("checked")
+            console.log(checked)
+            $("#go").prop("disabled", !checked)
+        })
+    </script>
+  </body>
+</html>

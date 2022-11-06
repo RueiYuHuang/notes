@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 大 -> 小 */
+        /* body{
+            background: pink;
+            transition: .5s;
+        } */
+        /* @media all and (max-width: 800px) and (min-width: 600px){
+            body{
+                background: lightblue;
+            }
+        } */
+        /* @media all and (max-width: 800px){
+            body{
+                background: lightblue;
+            }
+        }
+        @media screen and (max-width: 600px){
+            body{
+                background: yellow;
+            }
+        } */
+
+        /* 小 -> 大 */
+
+        body{
+            background: yellow;
+        }
+        
+        @media all and (min-width: 600px) {
+            body{
+                background: lightblue;
+            }
+        }
+        @media all and (min-width: 800px) {
+            body{
+                background: pink;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>CSS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box{
+            width: 120px;
+            height: 120px;
+            background: pink;
+            transition: .4s;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="py-2">
+            <button class="btn btn-info" id="getCss">getCss</button>
+            <button class="btn btn-info" id="setCss">setCss</button>
+            <button class="btn btn-info" id="toggleCss">toggleCss</button>
+            <button class="btn btn-info" id="extend">extend</button>
+        </div>
+        <div class="box" id="box"></div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $("#getCss").click(function(){
+            // console.log("click");
+            // elem.style 
+            let background=$("#box").css("background")
+            // console.log(background)
+            let boxWidth=$("#box").css("width");
+            let boxHeight=$("#box").css("height")
+            console.log(boxWidth, boxHeight)
+            console.log($("#box").width(), $("#box").height())
+        })
+
+        $("#setCss").click(function(){
+            $("#box").css("background", "red")
+            $("#box").css("border-radius", "30px")
+        })
+        $("#toggleCss").click(function(){
+            let backgroundColor=$("#box").css("background-color");
+            // console.log(backgroundColor)
+            if(backgroundColor=="rgb(255, 192, 203)"){
+                $("#box").css("background", "red")
+            }else{
+                $("#box").css("background", "pink")
+            }
+        })
+
+        $("#extend").click(function(){
+            $("#box").css("width", "+=10px")
+        })
+    </script>
+  </body>
+</html>

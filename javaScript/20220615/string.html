@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <script>
+        const input="As I was going to Saint Ives going";
+        console.log("--startsWith--")
+        console.log(input.startsWith("As"))
+        console.log("--endsWith--")
+        console.log(input.endsWith("Ives"))
+        console.log("--includes--")
+        console.log(input.includes("going"))
+        console.log(input.includes("going2"))
+        console.log("--indexOf--")
+        console.log(input.indexOf("going"))
+        console.log(input.indexOf("going2"))
+        console.log("--replace--")
+        const output=input.replace("going", "walking")
+        console.log(output)
+
+    </script>
+</body>
+</html>

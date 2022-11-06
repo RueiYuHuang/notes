@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .wrapper{
+            max-width: 800px;
+            margin:0 auto;
+            height: 600px;
+            background: #ccc;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* align-items: flex-end; */
+            /* flex-wrap: wrap;
+            align-content: flex-start; */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin:10px;
+            background: rgb(225, 35, 66);
+            font-size: 20px;
+            color:#fff;
+            /* flex-shrink: 0; */
+            /* flex-grow: 1; */
+            /* flex-basis: 120px; */
+            /* flex: 1 1 120px; */
+        }
+        .box1{
+            flex-shrink: 0;
+            /* flex-grow: 1; */
+        }
+        .box2{
+            /* flex-grow: 2; */
+            order: 4;
+        }
+        .box3{
+            order: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">1<br>2<br>3</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <!-- <div class="box">5</div> -->
+
+    </div>
+</body>
+</html>

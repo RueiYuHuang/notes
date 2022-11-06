@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dom</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <div class="py-2">
+            <table class="table table-bordered">
+                <tr id="appendToContent">
+                    <td>Tom</td>
+                    <td>0922222222</td>
+                    <td>tom@test.com</td>
+                </tr>
+                <tr id="prependToContent">
+                    <td>May</td>
+                    <td>0922222444</td>
+                    <td>may@test.com</td>
+                </tr>
+            </table>
+        </div>
+        <div class="py-2">
+            <button class="btn btn-info" id="append">append</button>
+            <button class="btn btn-info" id="appendTo">appendTo</button>
+            <button class="btn btn-info" id="prepend">prepend</button>
+            <button class="btn btn-info" id="prependTo">prependTo</button>
+        </div>
+        <table class="table table table-bordered">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>phone</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody id="target">
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $("#append").click(function(){
+            let content=`<tr>
+                    <td>Joe</td>
+                    <td>0900000000</td>
+                    <td>joe@test.com</td>
+                </tr>`;
+            $("#target").append(content)
+        })
+
+        $("#appendTo").click(function(){
+            $("#appendToContent").appendTo("#target")
+        })
+
+        $("#prepend").click(function(){
+            let content=`<tr>
+                    <td>Sue</td>
+                    <td>0900000033</td>
+                    <td>sue@test.com</td>
+                </tr>`;
+            $("#target").prepend(content)
+        })
+
+        $("#prependTo").click(function(){
+            $("#prependToContent").prependTo("#target")
+        })
+
+        let users=[
+            {
+                id: 1,
+                name: "Joe",
+                phone: "0900000000",
+                email: "joe@test.com"
+            },
+            {
+                id: 2,
+                name: "May",
+                phone: "0900000001",
+                email: "may@test.com"
+            },
+            {
+                id: 3,
+                name: "Roy",
+                phone: "0900000021",
+                email: "roy@test.com"
+            }
+        ]
+
+        users.forEach((user, index)=>{
+            // console.log(user)
+            let content=`<tr>
+                    <td>${user.name}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.email}</td>
+                </tr>`;
+            $("#target").append(content)
+        })
+    </script>
+  </body>
+</html>

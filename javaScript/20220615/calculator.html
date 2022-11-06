@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <div class="container">
+          <div class="row gx-1">
+              <div class="col-auto">
+                  <input type="number" class="form-control"
+                  id="num1">
+              </div>
+              <div class="col-auto">
+                <select class="form-select" name="" id="calculate">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                </select>
+            </div>
+              <div class="col-auto">
+                <input id="num2" type="number" class="form-control">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary"
+                id="action"
+                >=</button>
+            </div>
+            <div class="col-auto">
+                <input type="text"
+                class="form-control-plaintext"
+                value="0"
+                id="result"
+                readonly
+                >
+            </div>
+          </div>
+      </div>
+
+      <script>
+          let num1=document.querySelector("#num1")
+          let num2=document.querySelector("#num2")
+          let calculate=document.querySelector("#calculate")
+          let action=document.querySelector("#action")
+          let result=document.querySelector("#result")
+
+          action.addEventListener("click", function(){
+            //   console.log("click")
+            let num1Val=Number(num1.value);
+            let num2Val=Number(num2.value);
+            // console.log(num1Val, num2Val)
+            let calculateVal=calculate.value;
+            let resultVal;
+            // console.log(resultVal)
+            switch(calculateVal){
+                case "+":
+                    resultVal = num1Val+num2Val;
+                    break;
+                case "-":
+                    resultVal = num1Val-num2Val;
+                    break;
+                case "*":
+                    resultVal = num1Val*num2Val;
+                    break;
+            }
+            // console.log(resultVal)
+            result.value=resultVal;
+
+          })
+
+      </script>
+  </body>
+</html>

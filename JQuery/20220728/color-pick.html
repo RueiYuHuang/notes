@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Color Pick</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .target{
+            height: 300px;
+            background: #ccc;
+        }
+        .circle{
+            --width: 72px;
+            width: var(--width);
+            height: var(--width);
+            background: #eee;
+            border-radius: 50%;
+            margin:5px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="target" id="target"></div>
+            </div>
+            <div class="col-6 d-flex flex-wrap align-content-start">
+                <div class="circle" style="background: red"></div>
+                <div class="circle" style="background: orange"></div>
+                <div class="circle" style="background: yellow"></div>
+                <div class="circle" style="background: green"></div>
+                <div class="circle" style="background: blue"></div>
+                <div class="circle" style="background: purple"></div>
+            </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(".circle").click(function(){
+            // console.log("click")
+            let backgroundColor=$(this).css("background-color")
+            // console.log(backgroundColor)
+            $("#target").css("background", backgroundColor);
+        })
+    </script>
+  </body>
+</html>

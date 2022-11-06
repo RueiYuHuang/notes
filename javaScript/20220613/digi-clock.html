@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000;
+        }
+        .time {
+            color: rgb(40, 255, 40);
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time" id="clock">2022/06/13(一) 10:00:00</div>
+
+    <script>
+        let clockContent=document.querySelector("#clock")
+
+        function clock() {
+            let today = new Date();
+            // 2022/06/10(五) 09:38:12
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1;
+            if (month < 10) month = "0" + month;
+            let date = today.getDate();
+            let weekday = ["日", "一", "二", "三", "四", "五", "六"];
+            if (date < 10) date = "0" + date;
+            //weekday[0]
+            let day = weekday[today.getDay()];
+
+            let hour = today.getHours();
+            if (hour < 10) hour = "0" + hour
+            let min = today.getMinutes();
+            if (min < 10) min = "0" + min
+            let sec = today.getSeconds();
+            if (sec < 10) sec = "0" + sec
+
+            let time = `${year}/${month}/${date}(${day}) ${hour}:${min}:${sec}`;
+            // console.log(time)
+            clockContent.innerText=time;
+        }
+
+        setInterval(clock, 1000)
+
+
+    </script>
+</body>
+
+</html>

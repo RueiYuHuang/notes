@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var</title>
+    <style>
+        :root{
+            --width: 500px;
+        }
+        .box{
+            width: var(--width);
+        }
+    </style>
+</head>
+<body>
+
+   <script>
+    // let 跟 var 的差別
+    /*
+    1. var 可以重複宣告
+
+    */
+
+    /*
+       //賦予
+       var welcome="hello";
+    //    alert("hi")
+    // console.log("hi");
+    console.log(welcome)
+    // console.log("welcome")
+    var welcome="hi"; 
+    console.log(welcome)
+    */
+
+    /*
+    let name="Joe";
+    console.log(name)
+    // let name="Jack"
+    console.log(name)
+    */
+
+
+    /*
+        2. 變數提升
+    */
+//    var welcome;
+//    console.log(welcome)
+
+    console.log(welcome)
+    var welcome="hi"
+    console.log(welcome)
+
+    // console.log(name)
+    let name="Joe"
+    console.log(name)
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        img{
+            width: 200px;
+            transition: .4s;
+        }
+        .blur:hover{
+            filter: blur(10px);
+        }
+        .brightness:hover{
+            filter: brightness(200%);
+        }
+        .contrast:hover{
+            filter: contrast(120%);
+        }
+        .grayscale:hover{
+            filter: grayscale(30%);
+        }
+        .hue:hover{
+            filter: hue-rotate(120deg);
+        }
+        .invert:hover{
+            filter: invert(100%);
+        }
+        .saturate:hover{
+            filter: saturate(200%);
+        }
+        .sepia:hover{
+            filter: sepia(100%);
+        }
+        .drop-shadow:hover{
+            filter: drop-shadow(0 2px 5px #000);
+        }
+        .box-shadow:hover{
+            box-shadow: 0 2px 5px #000;
+        }
+        .filter:hover{
+            filter: brightness(200%) hue-rotate(120deg);
+        }
+    </style>
+
+</head>
+<body>
+    <img class="blur" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="brightness" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="contrast" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="grayscale" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="hue" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="invert" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="saturate" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="sepia" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="filter" src="/CSS3/images/ironman.jpg" alt="">
+
+    <img class="drop-shadow" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="box-shadow" src="/CSS3/images/ironman.jpg" alt="">
+    <img class="box-shadow" src="/CSS3/images/picture.svg" alt="">
+    <img class="drop-shadow" src="/CSS3/images/picture.svg" alt="">
+
+
+</body>
+</html>

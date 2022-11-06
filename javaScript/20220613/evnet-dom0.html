@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom0</title>
+</head>
+<body>
+    <button id="removeEvent">remove event</button>
+    <hr>
+    <button id="btn">Dom0 click</button>
+
+    <script>
+        let btn=document.querySelector("#btn")
+        let removeEvent=document.querySelector("#removeEvent")
+
+        btn.onclick=function(){
+            console.log("dom0 click 1");
+        }
+        btn.onclick=function(){
+            console.log("dom0 click 2");
+        }
+        btn.onmouseenter=function(){
+            console.log("dom0 mouseenter");  
+        }
+
+        //dom0 註銷事件
+        removeEvent.onclick=function(){
+            btn.onclick=null;
+        }
+    </script>
+</body>
+</html>

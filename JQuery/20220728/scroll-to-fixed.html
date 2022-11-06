@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>scroll to fixed</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            height: 300vh;
+        }
+        header{
+            height: 200px;
+            background: #eee;
+        }
+        nav{
+            padding: 20px;
+            background: lightblue;
+        }
+        .col-md-8{
+            background: #eee;
+            height: 700px;
+        }
+        .box{
+            height: 200px;
+            background: pink;
+        }
+    </style>
+  </head>
+  <body>
+      <header>
+        header
+      </header>
+      <nav class="">
+        nav
+      </nav>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <div class="box sticky-top"></div>
+            </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        let navPosition=$("nav").offset().top;
+        // console.log(navPosition)
+
+        // $(window).scroll(function(){
+        //     let scrollTop=$(this).scrollTop();
+        //     // console.log(scrollTop)
+        //     if(scrollTop>=navPosition){
+        //         $("nav").addClass("fixed-top")
+        //     }else{
+        //         $("nav").removeClass("fixed-top")
+        //     }
+        // })
+    </script>
+  </body>
+</html>

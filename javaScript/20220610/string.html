@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <script>
+         let string="JavaScript";
+         console.log('--toLowerCase--')
+         console.log(string.toLocaleLowerCase())
+         console.log('--toUpperCase--')
+         console.log(string.toUpperCase())
+         console.log("--charAt--")
+         console.log(string.charAt(2))
+         
+         let saying="Home Sweet home";
+        console.log("--indexOf--")
+        console.log(saying.indexOf("ee"))
+        console.log("--lastIndexOf--")
+        console.log(saying.lastIndexOf("ee"))
+        console.log("--substring--");
+        console.log(saying.substring(2,6))
+        console.log("--split--")
+        let sayingArr=saying.split(" ");
+        console.log(sayingArr)
+        console.log("--replace--")
+        let newSaying=saying.replace("me", "w")
+        console.log(newSaying)
+    </script>
+    
+</body>
+</html>

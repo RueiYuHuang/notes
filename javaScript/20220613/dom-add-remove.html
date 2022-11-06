@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom add</title>
+    <style>
+        .box{
+            width: 120px;
+            height: 120px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="target">
+
+    </div>
+    <hr>
+    <div>
+        <button id="removeBtn">remove</button>
+    </div>
+    <div class="box" id="box"></div>
+    <script>
+        //appendChild
+        let target=document.querySelector("#target")
+        let btn=document.createElement("button")
+        let btnContent=document.createTextNode("click me")
+        btn.appendChild(btnContent);
+        target.appendChild(btn)
+
+        //remove
+        let removeBtn=document.querySelector("#removeBtn")
+        removeBtn.onclick=function(){
+            // console.log("click")
+            document.querySelector("#box").remove()
+        }
+
+    </script>
+</body>
+</html>

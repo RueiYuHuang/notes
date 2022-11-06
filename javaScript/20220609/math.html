@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body>
+    
+    <script>
+        console.log("--Math.PI--")
+        console.log(Math.PI)
+        let number=123.56723;
+        console.log("--Math.round()--")
+        console.log(Math.round(number));
+        //小數點後第二位
+        console.log(Math.round(number*100)/100);
+        console.log("--Math.ceil()--")
+        console.log(Math.ceil(number));
+        console.log("--Math.floor()--")
+        console.log(Math.floor(number));
+        console.log("--Math.sqrt()--")
+        console.log(Math.sqrt(9))
+        console.log("--Math.abs()--")
+        console.log(Math.abs(-5))
+        console.log("--Math.min()--")
+        console.log(Math.min(0, 150, 30, 20, -8, -200));
+        console.log("--Math.max()--")
+        console.log(Math.max(0, 150, 30, 20, -8, -200))
+        console.log("--Math.random()--")
+        console.log(Math.random())
+        console.log(Math.floor(Math.random()*5))
+        let fruit=["apple", "banana", "orange", "peach", "melon"];
+        let randomFruitIndex=Math.floor(Math.random()*fruit.length)
+        console.log(fruit[randomFruitIndex])
+
+
+    </script>
+</body>
+</html>

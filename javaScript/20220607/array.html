@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+        // let fruit="apple", fruit2="oragne", fruit3="banana";
+
+        let fruit=["apple", "banana", "oragne", "strawberry"];
+
+        console.log(fruit)
+        console.log(fruit[0])
+        console.log(fruit[1])
+        // console.log(fruit[5])
+
+        let fruitCount=fruit.length;
+        console.log("length", fruitCount)
+        console.log("--push--");
+        fruit.push("peach");
+        console.log(fruit)
+        console.log("--pop--");
+        fruit.pop();
+        console.log(fruit)
+        console.log("--shift--");
+        fruit.shift();
+        console.log(fruit)
+        console.log("--unshift--");
+        fruit.unshift("apple", "melon");
+        console.log(fruit)
+        console.log("--indexOf--");
+        console.log(fruit.indexOf("apple"))
+        console.log(fruit.indexOf("mango"))
+        console.log("--splice--");
+        fruit.splice(2, 0, "peach", "mango")
+        console.log(fruit)
+        console.log("--slice--")
+        let fruit2=fruit.slice(2, 5)
+        console.log(fruit2)
+        let fruit3=fruit.slice(-2)
+        console.log(fruit3)
+        console.log("--concat--")
+        let arr1=[1,2,3]
+        let arr2=[4,5,6]
+        let arr3=arr1.concat(arr2)
+        console.log(arr3)
+
+
+    </script>
+</body>
+</html>

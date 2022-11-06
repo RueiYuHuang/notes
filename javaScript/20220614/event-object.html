@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Event Object</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <!-- <div class="vh-100">
+
+      </div> -->
+      <div class="container">
+          <button class="btn btn-info" id="button">button</button>
+          <div class="py-2">
+              x: <span id="pageX"></span>, y: <span id="pageY"></span>
+          </div>
+      </div>
+      <script>
+          let button=document.querySelector("#button")
+          let body=document.querySelector("html")
+          let pageX=document.querySelector("#pageX")
+          let pageY=document.querySelector("#pageY")
+
+
+        //   body.addEventListener("click", function(e){
+        //     pageX.innerText=e.pageX;
+        //     pageY.innerText=e.pageY;
+        //   })
+
+        body.addEventListener("mousemove", function(e){
+            pageX.innerText=e.pageX;
+            pageY.innerText=e.pageY;
+          })
+
+          button.addEventListener("click", function(e){ //event, e, ent
+            //   console.log("click")
+            console.log(e)
+            //事件發生時, 滑鼠距離頁面原點(左上角)的位置
+            console.log("--pageX, pageY--")
+            console.log(e.pageX, e.pageY)
+            //事件發生時, 滑鼠距離目標元素原點(左上角)的位置
+            console.log("--offsetX, offsetY--")
+            console.log(e.offsetX, e.offsetY)
+            //事件發生時, 滑鼠距離 viewport 原點(左上角)的位置
+            console.log("--clientX, clientY--")
+            console.log(e.clientX, e.clientY)
+          })
+
+
+      </script>
+  </body>
+</html>

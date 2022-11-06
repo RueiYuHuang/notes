@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Clip</title>
+    <style>
+        .box{
+            width: 230px;
+            height: 230px;
+            padding: 10px;
+            background: url("/CSS3/images/check.jpg")  left top;
+            border: 10px dashed #ccc;
+            margin:10px;
+        }
+        .border{
+            background-clip: border-box;
+        }
+        .padding{
+            background-clip: padding-box;
+        }
+        .content{
+            background-clip: content-box;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            background: url("/CSS3/images/check.jpg");
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="box border"></div>
+    <div class="box padding"></div>
+    <div class="box content"></div>
+    <h1>Hello World</h1>
+</body>
+</html>

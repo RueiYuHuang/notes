@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2</title>
+</head>
+<body>
+    <button id="removeEvent">remove event</button>
+    <hr>
+    <button id="btn">Dom2 click</button>
+
+    <script>
+        let btn=document.querySelector("#btn")
+        let removeEvent=document.querySelector("#removeEvent")
+
+
+        // btn.addEventListener("click", function(){
+        //     console.log("dom2 click 1")
+        // }, false) //第三個參數預設是 false
+        // btn.addEventListener("click", function(){
+        //     console.log("dom2 click 2")
+        // }, false)
+
+        function callEvent(){
+            console.log("dom2 click")
+        }
+        btn.addEventListener("click", callEvent);
+
+        removeEvent.addEventListener("click", function(){
+            btn.removeEventListener("click", callEvent)
+        })
+
+        btn.addEventListener("mouseenter", function(){
+            console.log("dom2 mouseenter")
+        }) 
+
+    </script>
+</body>
+</html>

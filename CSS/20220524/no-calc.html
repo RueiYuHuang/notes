@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        .wrapper{
+            max-width: 960px;
+            margin: 0 auto;
+            background: lightblue;
+        }
+        .col{
+            width: 25%;
+            float: left;
+        }
+        .card{
+            margin: 0 10px 10px;
+            height: 100px;
+            padding:10px;
+            border: 1px solid #aaa;
+            background: pink;
+        }
+        .clear{
+            clear:both;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper clearfix">
+        <div class="col">
+            <div class="card">
+                1
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                2
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                3
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                4
+            </div>
+        </div>
+
+        <!-- <div class="clear"></div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>lightbox</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="src/css/lightbox.css" rel="stylesheet" />
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/images/01.png" data-lightbox="image-1" data-title="Blade Man"><img src="/images/01.png" alt=""></a>
+        <hr>
+        <a href="/images/01.png" data-lightbox="images" data-title="Blade Man"><img src="/images/01.png" alt=""></a>
+        <a href="/images/02.png" data-lightbox="images" data-title="Concrete Man"><img src="/images/02.png" alt=""></a>
+        <a href="/images/03.png" data-lightbox="images" data-title="Concrete Man"><img src="/images/03.png" alt=""></a>
+        <a href="/images/04.png" data-lightbox="images" data-title="Concrete Man"><img src="/images/04.png" alt=""></a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="src/js/lightbox.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': '第 %1 張, 共 %2 張'
+        })
+    </script>
+</body>
+
+</html>

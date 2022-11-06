@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit</title>
+    <style>
+        /* *{
+            padding:0;
+            margin:0;
+        } */
+        html {
+            font-size: 12px;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            /* height: 300vh; */
+        }
+
+        div {
+            /* 20px -> 20/16 rem */
+            /* r->root */
+            font-size: 1rem;
+            /* font-size: 10px; */
+            /* font-size: 12px; */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin:0;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+        .full-page{
+            /* background: lightblue; */
+            height: 100vh;
+        }
+        .bg1{
+            background: lightblue;
+        }
+        .bg2{
+            background: palevioletred;
+        }
+        .box{
+            height: 20vh;
+            width: 20vw;
+            background: rgb(243, 239, 17);
+        }
+        .box2{
+            background: orange;
+            width: 20vw;
+            height: 20vw;
+        }
+        .box3{
+            background: greenyellow;
+            width: 30vmax;
+            height: 30vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full-page bg1">
+        <h1>This is h1.</h1>
+        <h2>This is h2.</h2>
+        <div>
+            This is content
+            <div>
+                This is content in 2 div
+                <div>
+                    This is content in 3 div
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-page bg2">
+        <div class="box"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>on</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <button id="button" class="btn btn-info">on</button>
+        <div class="py-2">
+            <input type="text" class="form-control" id="input">
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        // $("#button").on("click", function(){
+        //     console.log("click")
+        // })
+        // $("#button").on("mouseenter", function(){
+        //     console.log("mouse enter")
+        // })
+
+        $("#button").on({
+            "click": function(){
+                console.log("click");
+            },
+            "dblclick": function(){
+                console.log("double click");
+            },
+            "mouseenter": function(){
+                console.log("mouse enter");
+            },
+            "mouseleave": function(){
+                console.log("mouse leave");
+            }
+        })
+        
+        $("#input").on("change keyup", function(){
+            // console.log("chnage")
+            // elem.value
+            let content=$(this).val();
+            console.log(content)
+        })
+    </script>
+  </body>
+</html>

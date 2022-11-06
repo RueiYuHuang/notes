@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    
+    <script>
+        const string="apple pie";
+        const string2="pineapple";
+
+
+        const re1=/apple/;
+        const re2=/./;
+        const re3=/apple./;
+
+        console.log(re1.test(string))
+        console.log(re2.test(string))
+        console.log(re3.test(string))
+        console.log(re3.test(string2))
+
+        console.log("--phone number--")
+        const reMobile=/^09\d{8}$/
+        const number="0911222333";
+        const number2="09112223333";
+
+        console.log(reMobile.test(number))
+        console.log(reMobile.test(number2))
+
+        console.log("--id number--")
+        const reId=/^[A-Z]{1}[1-2]{1}[0-9]{8}$/
+        const idNumber="A123456789"
+        console.log(reId.test(idNumber))
+
+        console.log("--email--")
+        const reEmail=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        const email1="test@test.com"
+        const email2="test@test"
+
+        console.log(reEmail.test(email1))
+        console.log(reEmail.test(email2))
+        
+
+
+
+    </script>
+</body>
+</html>

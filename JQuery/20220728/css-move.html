@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS move</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        .wrapper{
+            width:800px;
+            height: 400px;
+            background: #eee;
+        }
+        .box{
+            width: 120px;
+            height: 120px;
+            background: lightblue;
+            transition: .2s;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper position-relative mx-auto">
+    <div class="box position-absolute" id="box"></div>
+</div>
+<div class="py-3 text-center">
+    <div class="py-1">
+        <button class="btn btn-info"
+        data-direction="up"><i class="fas fa-caret-up"></i></button>
+    </div>
+    <div>
+        <button class="btn btn-info mx-1" data-direction="left" id="left"><i class="fas fa-caret-left"></i></button>
+        <button class="btn btn-info mx-1" data-direction="right" id="right"><i class="fas fa-caret-right"></i></button>
+    </div>
+    <div class="py-1">
+        <button class="btn btn-info"
+        data-direction="down"><i class="fas fa-caret-down"></i></button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+    // $("#right").click(function(){
+    //     $("#box").css("left", "+=10px")
+    // })
+    // $("#left").click(function(){
+    //     $("#box").css("left", "-=10px")
+    // })
+    let colorArr=["red", "yellow", "green", "blue", "purple"];
+    let colorIndex=0;
+
+    $(".btn").click(function(){
+        //elem.dataset.direction
+        let direction=$(this).data("direction")
+        // console.log(direction)
+        switch(direction){
+            case "up":
+                // $("#box").css("top", "-=10px")
+                // $("#box").css("background", "red")
+                $("#box").css({
+                    "top": "-=10px",
+                    // "background": "red"
+                })
+                break;
+            case "down":
+                // $("#box").css("top", "+=10px")
+                $("#box").css({
+                    "top": "+=10px",
+                    // "background": "yellow"
+                })
+                break;
+            case "left":
+                // $("#box").css("left", "-=10px")
+                $("#box").css({
+                    "left": "-=10px",
+                    // "background": "blue"
+                })
+                break;
+            case "right":
+                // $("#box").css("left", "+=10px")
+                $("#box").css({
+                    "left": "+=10px",
+                    // "background": "green"
+                })
+                break;
+        }
+        $("#box").css("background", colorArr[colorIndex])
+        colorIndex++;
+        if(colorIndex==colorArr.length)colorIndex=0;
+    }) 
+</script>
+</body>
+</html>

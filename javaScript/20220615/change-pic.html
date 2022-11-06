@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>change pic</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .object-cover{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .main-pic{
+            height: 300px;
+        }
+        .thumbnail-list li{
+            --width: 84px;
+            width: var(--width);
+            height: var(--width);
+            border: 4px solid #ccc;
+            margin: 5px;
+        }
+        .thumbnail-list li.active{
+            border: 4px solid rgb(238, 16, 94);
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <figure class="text-center">
+              <img class="main-pic" id="mainPic" src="/images/daredevil.jpg" alt="">
+          </figure>
+          <div class="">
+              <ul id="list" class="list-unstyled thumbnail-list d-flex justify-content-center">
+                  <li class="active"><img class="object-cover" src="/images/daredevil.jpg" alt=""></li>
+                  <li><img class="object-cover" src="/images/dr_fate.jpg" alt=""></li>
+                  <li><img class="object-cover" src="/images/dr_strange.jpg" alt=""></li>
+                  <li><img class="object-cover" src="/images/ironman.jpg" alt=""></li>
+                  <li><img class="object-cover" src="/images/deadpool.jpg" alt=""></li>
+              </ul>
+          </div>
+      </div>
+
+    <script>
+        let item=document.querySelectorAll("#list li");
+        let mainPic=document.querySelector("#mainPic")
+
+        let pics=[
+            "daredevil.jpg", "dr_fate.jpg", "dr_strange.jpg", "ironman.jpg", "deadpool.jpg"
+        ]
+
+        for(let i=0; i<item.length; i++){
+            item[i].onclick=function(){
+                for(let j=0; j<item.length; j++){
+                    item[j].classList.remove("active")
+                }
+
+                this.classList.add("active")
+                let picUrl=this.childNodes[0].src;
+                
+
+                mainPic.src=picUrl;
+            }
+        }
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+        .wrapper{
+            max-width: 960px;
+            margin: 0 auto;
+            background: lightblue;
+            min-height: calc(100vh - 38px);
+        }
+        .col{
+            /* box-sizing: border-box; */
+            width: calc(25% - 20px);
+            margin: 0 10px 10px;
+            height: 100px;
+            padding:10px;
+            border: 1px solid #aaa;
+            background: pink;
+            float: left;
+        }
+        .clear{
+            clear:both;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* .content::before{
+            content: "123";
+            color: red;
+        }
+        .content::after{
+            content: "789";
+        } */
+        .box{
+            width: 200px;
+            height: 200vh;
+            background: red;
+        }
+        footer{
+            padding:10px;
+            text-align: center;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper clearfix">
+        <div class="col">
+            1
+        </div>
+        <div class="col">
+            2
+        </div>
+        <div class="col">
+            3
+        </div>
+        <div class="col">
+            4
+        </div>
+        <div class="col">
+            5
+        </div>
+        <!-- <div class="box"></div> -->
+        <!-- <div class="clear"></div> -->
+    </div>
+    <!-- <div class="content">456</div> -->
+    <footer>
+        this is footer
+    </footer>
+</body>
+</html>

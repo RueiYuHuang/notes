@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Origin</title>
+    <style>
+        .box{
+            width: 230px;
+            height: 230px;
+            padding: 10px;
+            background: url("/CSS3/images/check.jpg")  left top no-repeat;
+            border: 10px dashed #ccc;
+            margin:10px;
+        }
+        .border{
+            background-origin: border-box;
+        }
+        .padding{
+            background-origin: padding-box;
+        }
+        .content{
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box border"></div>
+    <div class="box padding"></div>
+    <div class="box content"></div>
+
+</body>
+</html>

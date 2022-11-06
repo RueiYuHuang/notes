@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>map</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <style>
+        .map {
+            height: 300px;
+        }
+        .leaflet-popup-content img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="map" id="map"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <script>
+        if ("geolocation" in navigator) {
+            /* geolocation is available */
+            // console.log("yes")
+            navigator.geolocation.getCurrentPosition(getPosition, error);
+
+            function getPosition(position) {
+                let lat = position.coords.latitude;
+                let lon = position.coords.longitude;
+                console.log(lat, lon);
+
+                var map = L.map('map').setView([lat, lon], 13);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap'
+                }).addTo(map);
+
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup(`I'm here!!`)
+                    .openPopup();
+
+                $.ajax({
+                    method: "GET",
+                    url: "taoyuan.json",
+                    dataType: "json"
+                })
+                    .done(function (response) {
+                        // console.log(response)
+                        response.forEach((school, index) => {
+                            // console.log(school)
+                            L.marker([school.lat, school.lng]).addTo(map)
+                                .bindPopup(`<h3 class="h5">${school.name}</h3>
+                                <img src='https://unimap.wingzero.tw/uniform/${school.location}/${school.code}/${school.school_pic}'>
+                                `);
+
+                        })
+
+                    }).fail(function () {
+
+                    })
+                    .always(function () {
+
+                    });
+
+            }
+            function error(error) {
+                console.log(error)
+            }
+
+
+        } else {
+            /* geolocation IS NOT available */
+        }
+
+
+
+    </script>
+</body>
+
+</html>

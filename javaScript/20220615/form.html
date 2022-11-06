@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <div class="container">
+          <div class="py-2">
+              <button class="btn btn-info" id="getValue">get value</button>
+              <button class="btn btn-info" id="setValue">set value</button>
+          </div>
+          <div class="py-2">
+              <input type="text" id="input" class="form-control">
+          </div>
+          <h1 id="output"></h1>
+          <div class="py-2">
+            <button class="btn btn-info" id="getCity">get city</button>
+            <button class="btn btn-info" id="setCity">set city</button>
+          </div>
+          <div class="py-2">
+              <div class="row">
+                  <div class="col">
+                    <select class="form-select" name="" id="cities">
+                        <option value="1">台北市</option>
+                        <option value="2">新北市</option>
+                        <option value="3">桃園市</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                      <select class="form-select" name="" id=""></select>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+    
+    <script>
+        const getValue=document.querySelector("#getValue")
+        const setValue=document.querySelector("#setValue")
+        const getCity=document.querySelector("#getCity")
+        const setCity=document.querySelector("#setCity")
+
+        const input=document.querySelector("#input")
+        const output=document.querySelector("#output")
+        const cities=document.querySelector("#cities")
+
+        getValue.addEventListener("click", function(){
+            let content=input.value;
+            console.log(content)
+            output.innerText=content;
+        })
+        setValue.addEventListener("click", function(){
+            input.value="new content"
+        })
+
+        // input.addEventListener("change", function(){
+        //     let content=this.value;
+        //     output.innerText=content;
+        // })
+
+        input.addEventListener("keyup", function(){
+            let content=this.value;
+            output.innerText=content;
+        })
+
+
+        getCity.addEventListener("click", function(){
+            let city=cities.value;
+            console.log(city)
+        })
+        setCity.addEventListener("click", function(){
+            cities.value=3;
+        })
+
+        cities.addEventListener("change", function(){
+            let city=this.value;
+            console.log(city)
+        })
+    </script>
+  </body>
+</html>

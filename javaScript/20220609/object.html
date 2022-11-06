@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+
+</head>
+<body>
+    <script>
+        let user={
+            //ket -> value
+            name: "Joe",
+            nickname: "",
+            "last-name": "Smith",
+            // lastName: "Smith",
+            age: 10,
+            active: true,
+            // fruit: ["apple", "orange", "peach"]
+            favorite:{
+                fruit: ["apple", "orange", "peach"],
+                movies: ["Avengers", "Catch me if you can"]
+            },
+            sayHi: function(){
+                // console.log(`hi, I'm ${user.name}`)
+                console.log(`hi, I'm ${this.name}.`)
+            },
+            // tellAge: function(){
+
+            // }
+            tellAge(){
+                console.log(`I'm ${this.age} years old.`)
+            }
+        }
+
+        console.log(user)
+        // user.age=12;
+        // console.log(user)
+        // console.log(user.fruit)
+        // console.log(user["fruit"])
+        // console.log(user.favorite.fruit)
+        // console.log(user.favorite.movies)
+
+        let fruit=user.favorite.fruit.join(", ");
+        let content=`${user.name}'s favorite fruit are ${fruit}.`;
+
+        console.log(content)
+        document.write(content)
+
+        user.sayHi();
+        user.tellAge();
+
+        // delete user.age;
+        // console.log(user)
+
+
+    </script>
+</body>
+</html>

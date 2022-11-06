@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        @keyframes change {
+            0%{
+                background: red;
+            }
+            50%{
+                background: pink;
+                width: 200px;
+            }
+            100%{
+                background: yellow;
+            }
+        }
+        @keyframes changeColor {
+            0%{
+                background: red;
+            }
+            50%{
+                background: pink;
+            }
+            100%{
+                background: orange;
+            }
+        }
+        @keyframes changeLength {
+            0%{
+                width: 100px;
+            }
+            100%{
+                width: 200px;
+            }
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin:10px;
+            /* animation: change 2s;
+            animation-delay: .5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+             */
+            /* animation: change 2s alternate infinite both; */
+            animation: changeColor 2s alternate infinite, changeLength 1s alternate infinite;
+        }
+        .box:hover{
+            /* animation-play-state: paused; */
+        }
+        .box-start{
+            animation-timing-function: steps(5, start);
+
+        }
+        .box-end{
+            animation-timing-function: steps(5, end);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box box-start"></div>
+    <div class="box box-end"></div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            transition: .5s;
+            /* background: red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="getStyle">get style</button>
+        <button id="setStyle">set style</button>
+        <button id="toggleStyle">toggle style</button>
+
+    </div>
+    <div class="box" id="box" style="width: 200px; background: red"></div>
+
+    <script>
+        let getStyle = document.querySelector("#getStyle")
+        let setStyle = document.querySelector("#setStyle")
+        let toggleStyle = document.querySelector("#toggleStyle")
+
+        let box = document.querySelector("#box")
+
+        getStyle.addEventListener("click", function () {
+            // console.log(box.id)
+            let width = box.style.width;
+            console.log("width", width)
+            // let height=box.style.height;
+            // console.log("height", height)
+            let background = box.style.background;
+            console.log("background", background)
+
+        })
+
+        setStyle.addEventListener("click", function () {
+            box.style.background = "purple";
+            box.style.borderRadius = "50%";
+        })
+
+        toggleStyle.addEventListener("click", function () {
+            let boxBackground = box.style.background;
+            if (boxBackground === "red") {
+                box.style.background = "purple";
+                box.style.borderRadius = "50%";
+            } else {
+                box.style.background = "red";
+                box.style.borderRadius = "0%";
+            }
+        })
+    </script>
+</body>
+
+</html>

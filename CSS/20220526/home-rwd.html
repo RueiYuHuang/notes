@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/CSS3/css/normalize.css">
+    <!-- <link rel="stylesheet" href="/CSS3/css/style.css"> -->
+    <style>
+        :root{
+            --main-color: #3B5998;
+            --main-hover-color: #8B9DC3;
+            /* --break-point: 768px; */
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a, a:link{
+            color: var(--main-color);
+            text-decoration: none;
+        }
+        a:hover{
+            color: var(--main-hover-color);
+        }
+
+        body{
+            background: #F7F7F7;
+        }
+
+        /* 模組 */
+        .container{
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .list-unstyled{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        .object-cover{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-header{
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 30px;
+        }
+
+        .logo{
+            width: 68px;
+        }
+
+        /* 其他 */
+        .main-nav{
+            background: var(--main-color);
+        }
+        .main-nav ul{
+            display: flex;
+        }
+        .main-nav ul a{
+            color: #fff;
+            padding: 10px 20px;
+            display: block;
+        }
+        /* .active{
+            border: 1px solid red;
+        } */
+        /* active, current, disabled */
+        .main-nav ul a:hover, .main-nav ul li.active a{
+            background: var(--main-hover-color);
+        }
+        @media screen and (max-width: 768px){
+            .main-nav ul li{
+                /* flex-grow: 1;
+                flex-basis: 0px; */
+                flex: 1 1 0;
+                text-align: center;
+            }
+            .main-nav ul a{
+                padding: 10px 0;
+            }
+            
+        }
+
+        .main-content{
+            margin-top: 14px;
+            display: flex;
+        }
+        .avatar{
+            --avatar-width: 180px;
+            width: var(--avatar-width);
+            height: var(--avatar-width);
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 0 17px 0;
+        }
+        .aside-menu a{
+            display: block;
+            padding: 10px 10px 10px 18px;
+            border-left: 6px solid transparent;
+            color: #000;
+        }
+        .aside-menu a:hover, .aside-menu li.active a{
+            border-left: 6px solid var(--main-color);
+            background: #fff;
+        }
+        .main-content main{
+            flex-grow: 1;
+        }
+        .main-article{
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            padding: 30px 25px;
+            background: #fff;
+            margin:0 20px;
+        }
+        .main-article h1{
+            margin: 0 0 10px 0;
+            font-size: 1.9rem;
+        }
+        .main-article p{
+            line-height: 1.5;
+        }
+        .aside-right img{
+            width: 180px;
+        }
+        @media screen and (max-width: 768px){
+            .main-content{
+                /* 方法一: flex-direction */
+                /* flex-direction: column; */
+                /* 方法二: flex-wrap */
+                flex-wrap: wrap;   
+            }
+            /* 方法二: flex-wrap */
+            .main-content>*{
+                width: 100%;
+            }
+            .avatar{
+                margin-left:auto;
+                margin-right: auto;
+            }
+            .aside-menu{
+                display: flex;
+                margin-bottom: 16px;
+            }
+            .aside-menu li{
+                text-align: center;
+                flex: 1 1 0;
+            }
+            .aside-menu a{
+                padding: 10px 10px 10px 18px;
+                border-bottom: 6px solid transparent;
+                border-left: none;
+            }
+            .aside-menu a:hover, .aside-menu li.active a{
+                border-left: none;
+                border-bottom: 6px solid var(--main-color);
+            }
+
+            .aside-right img{
+                display: none;
+            }
+        }
+        .main-footer{
+            text-align: center;
+            padding: 20px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <img class="logo" src="/CSS3/images/fb-logo.png" alt="">
+        <div>
+            <a href="">Log In</a> | <a href="">Sign Up</a>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="list-unstyled">
+                <li ><a href="">Home</a></li>
+                <li class="active"><a href="">Product</a></li>
+                <li ><a href="">Story</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <aside class="aside-left">
+                <figure class="avatar">
+                    <img class="object-cover" src="/CSS3/images/logo.jpg" alt="">
+                </figure>
+                <ul class="list-unstyled aside-menu">
+                    <li class="active"><a href="">Posts</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Albums</a></li>
+                    <li><a href="">Films</a></li>
+                </ul>
+            </aside>
+            <main>
+                <article class="main-article">
+                    <h1>Uniform Map</h1>
+                    <div>
+                        <time>2022/01/18</time>
+                    </div>
+                    <p>制服是指一群來自相同團體的人穿著著統一樣式的服裝，用以辨識其正在做進行的共同事情，或者用來分別其職業或特別身份，例如： 學生、警察和軍人等。制服也可以制定階級，例如：在香港，初級護士的制服是粉紅色，正式護士的制服是白色等。另外，制服是生活中角色扮演的道具，表示服從某種規章制度下的人的工作服裝，例如：囚犯服裝。 </p>
+                    <p>有些職業的制服是全世界統一樣式，例如民用航空飛機駕駛員的制服，一般為黑色，佩戴飛行標誌和肩牌，並且在袖口處縫有代表級別的標誌，戴大檐帽及海軍制服等等。 </p>
+                </article>
+            </main>
+            <aside class="aside-right">
+                <img src="/CSS3/images/girl_acg2.png" alt="">
+            </aside>
+        </div>
+    </div>
+    <footer class="main-footer">
+        ©Facebook
+    </footer>
+</body>
+
+</html>

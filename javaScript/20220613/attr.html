@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+<body>
+    <div>
+        <button id="getLink">get link</button>
+        <button id="setLink">set link</button>
+        
+    </div>
+    <a id="link" href="https://www.google.com" title="google">google</a>
+    <hr>
+    <div>
+        <button id="changePic">change</button>
+    </div>
+    <img id="img" src="/images/1.png" alt="">
+    <script>
+        let link=document.querySelector("#link")
+        let getLink=document.querySelector("#getLink")
+        let setLink=document.querySelector("#setLink")
+
+        let img=document.querySelector("#img")
+        let changePic=document.querySelector("#changePic")
+
+
+        getLink.onclick=function(){
+            // console.log("click")
+            let url=link.href;
+            console.log(url)
+        }
+        setLink.onclick=function(){
+            link.href="https://www.facebook.com"
+            link.innerText="facebook"
+            link.title="facebook"
+        }
+
+        changePic.onclick=function(){
+            img.src="/images/4.png";
+        }
+    </script>
+</body>
+</html>

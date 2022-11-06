@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Change Font Size</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .small{
+            font-size: 12px;
+        }
+        .large{
+            font-size: 20px;
+        }
+        
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="py-2">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" 
+                data-size="s"
+                class="btn btn-secondary">小</button>
+                <button type="button"
+                data-size="m" class="btn btn-secondary">中</button>
+                <button type="button" 
+                data-size="l" class="btn btn-secondary">大</button>
+              </div>
+        </div>
+        <h1>CSS</h1>
+        <div>
+            <p>階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。</p>
+            <p>CSS不能單獨使用，必須與HTML或XML一起協同工作，為HTML或XML起裝飾作用。本文主要介紹用於裝飾HTML網頁的CSS技術。其中HTML負責確定網頁中有哪些內容，CSS確定以何種外觀(大小、粗細、顏色、對齊和位置)展現這些元素。CSS可以用於設定頁面布局、設定頁面元素樣式、設定適用於所有網頁的全域樣式。CSS可以零散地直接添加在要應用樣式的網頁元素上，也可以集中化內建於網頁、連結式引入網頁以及匯入式引入網頁。</p>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(".btn").click(function(){
+            let size=$(this).data("size")
+            // console.log(size)
+            $("html").removeClass()
+            switch(size){
+                case "s":
+                    $("html").addClass("small")
+                    break;
+                case "m":
+                    // $("html").removeClass()
+                    break;
+                case "l":
+                    $("html").addClass("large")
+                    break;
+            }
+        })
+    </script>
+  </body>
+</html>

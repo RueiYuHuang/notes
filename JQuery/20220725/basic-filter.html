@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>basic filter</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="not"></td>
+                <td></td>
+                <td class="not"></td>
+                <td><p></p></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p></p></td>
+                <td class="not"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>LeBron James</td>
+                <td></td>
+                <td>Jason Kidd</td>
+                <td>James Harden</td>
+                <td>Jason Willams</td>
+            </tr>
+        </table>
+
+        <h1>h1 title</h1>
+        <h2>h2 title</h2>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        // $("td:eq(8)").css("background", "yellow")
+        // $("td:even").css("background", "red")
+        // $("td:odd").css("background", "green")
+
+        // $("td:first").css("background", "black")
+        // $("td:last").css("background", "gray")
+        // $("td:gt(5)").css("background", "pink")
+        // $("td:lt(11)").css("background", "orange")
+
+        // $(":header").css("color", "red")
+
+        // $("td:not(.not)").css("background", "yellow")
+
+        // $("td:first-child").css("background", "yellow")
+
+        // $("td:contains('Jason')").css("background", "red");
+
+        // $("td:empty").css("background", "lightblue")
+
+        $("td:has(p)").css("background", "purple")
+
+        
+        
+    </script>
+  </body>
+</html>

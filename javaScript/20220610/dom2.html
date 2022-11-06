@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        p {
+            padding: 20px;
+            background: pink;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="click">click</button>
+    <button class='btn'>.btn button</button>
+    <button class='btn'>.btn button</button>
+    <button class='btn'>.btn button</button>
+    <p>
+        p1
+    </p>
+    <p>
+        p2
+    </p>
+    <div class="box">
+        <button class='btn'>.btn button</button>
+    </div>
+    <script>
+        let btnId = document.querySelector("#click")
+        btnId.onclick = function () {
+            console.log("id click")
+        }
+
+        //只回傳第一個
+        // let btnClass=document.querySelector(".btn")
+        // btnClass.onclick=function(){
+        //     console.log('class click')
+        // }
+
+        //
+        let btnClass=document.querySelectorAll(".btn")
+        for(let i=0; i<btnClass.length; i++){
+            btnClass[i].onclick=function(){
+                console.log("class click "+i)
+            }
+        }
+
+        // let btnInBox=document.querySelectorAll(".box .btn")
+    </script>
+</body>
+
+</html>

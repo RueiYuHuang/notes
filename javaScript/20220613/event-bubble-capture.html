@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Event Bubble Capture</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .container{
+            background: lightblue;
+        }
+        .box{
+            background: pink;
+        }
+    </style>
+
+  </head>
+  <body>
+      <div class="container p-4">
+          container
+          <div class="box p-3">
+            box
+            <button class="btn btn-primary">button</button>
+          </div>
+      </div>
+
+    <script>
+        let container=document.querySelector(".container")
+        let box=document.querySelector(".box")
+        let btn=document.querySelector(".btn")
+
+        container.addEventListener("click", function(){
+            console.log("bubbling container click")
+        }, false) //false -> bubbling phase
+
+        box.addEventListener("click", function(){
+            console.log("bubbling box click")
+        }, false)
+
+        btn.addEventListener("click", function(){
+            console.log("bubbling btn click")
+        }, false)
+
+        container.addEventListener("click", function(){
+            console.log("capture container click")
+        }, true) //true -> capture phase
+
+        box.addEventListener("click", function(){
+            console.log("capture box click")
+        }, true) //true -> capture phase
+
+        btn.addEventListener("click", function(){
+            console.log("capture btn click")
+        }, true) //true -> capture phase
+    </script>
+  </body>
+</html>

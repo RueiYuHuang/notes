@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Size</title>
+    <style>
+        .map{
+            max-width: 600px;
+            height: 250px;
+            border: 1px solid #ccc;
+            background: url("/CSS3/images/map.png") center center no-repeat;
+            margin: 10px auto;
+        }
+        .contain{
+            background-size: contain;
+        }
+        .cover{
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="map"></div>
+    <div class="map contain"></div>
+    <div class="map cover"></div>
+
+</body>
+</html>

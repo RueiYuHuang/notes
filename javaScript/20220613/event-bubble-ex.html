@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Event Bubble Ex</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <div class="container">
+        <button class="btn btn-primary" id="toggle">toggle</button>
+        <div class="py-2">
+            <div id="show">
+                close
+            </div>
+        </div>
+      </div>
+    <script>
+        let toggle=document.querySelector("#toggle")
+        let body=document.querySelector("html")
+        let show=document.querySelector("#show")
+
+        toggle.addEventListener("click", function(event){
+            // console.log(event)
+            //阻止冒泡事件傳遞
+            event.stopPropagation();
+            let content=show.innerText;
+            if(content==="close"){
+                show.innerText="open"
+            }else{
+                show.innerText="close"
+            }
+        })        
+
+        body.addEventListener("click", function(){
+            // console.log("click")
+            show.innerText="close"
+        })
+
+    </script>
+  </body>
+</html>
