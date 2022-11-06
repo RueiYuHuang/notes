@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binarySearch</title>
+</head>
+<body>
+    <h3>二元搜尋法 Binary Search</h3>
+    <button onclick="test();">測試</button>
+<script>
+    const test = () => {
+        //實作二元搜尋法 *資料必須是排序過的*
+        //基本測試
+        let data = [2,3,5,8,12,15]
+        //大型測試資料
+        let largeData = [];
+        for(i = 0; i < 10000000; i++){
+            largeData.push(i*2);
+        }
+        console.log("所花時間");
+        console.time();
+        console.log("搜尋所在位置",binarySearch(largeData,10000001));
+        console.timeEnd();
+    }
+    // 實作二元搜尋 
+    const binarySearch = (arr, target) => {
+        let startIndex = 0;
+        let endIndex = arr.length-1;
+        while(endIndex >= startIndex){ // 如果結束位置比開頭位置大相等，就表示還沒到最後一個，繼續找
+            let midIndex = Math.floor((startIndex+endIndex)/2 );
+            if(target === arr[midIndex]){ // 比對到了，回傳資料在陣列中的位置，midIndex
+                return midIndex;
+            }else if(target > arr[midIndex]){ // 要找的資料比中間的數字大，找右邊
+                startIndex = midIndex + 1;
+            }else{ // 要找的資料比中間的數字小，找左邊
+                endIndex = midIndex - 1;
+            }
+        }
+        //結束位置小於開頭位置，表示沒找到，回傳 -1
+        return -1;
+    }
+</script>
+</body>
+</html>
