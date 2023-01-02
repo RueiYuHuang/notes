@@ -1,0 +1,2 @@
+雜湊亂數
+require('crypto').randomBytes(64).toString('hex')

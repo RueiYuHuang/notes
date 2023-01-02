@@ -1,5 +1,5 @@
-git config --global user.name "HuangRueiYu"
-git config --global user.email "b98170022@gmail.com"
+git config --global user.name "XXXX"
+git config --global user.email "XXXX@XXXX.com"
 
 //改成GIT管理
 git init
@@ -39,8 +39,11 @@ git pull --no-rebase
 //查看分支
 git branch
 git br 縮寫
+git br -r
+
 //創建分支
 git branch <branchName>
+
 //切換分支
 git checkout <branchName>
 git switch <branchName>
@@ -55,8 +58,10 @@ git pull
 git checkout "main"
 //合併
 git merge <要合併的分支>
-
-
+//刪除分支
+git branch -d <branch>
+git push <remote> --delete <branch>
+EX git push origin --delete fix/authentication
 ---------------------------------
 .gitconfig 檔案加入&縮寫
 [alias]
@@ -64,11 +69,9 @@ git merge <要合併的分支>
 	br = branch
 	ci = commit
 	st = status
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+      lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
 	l = log --oneline --graph
-        la = log --all --oneline --decorate --graph
+      la = log --all --oneline --decorate --graph
 [user]
 	name = RueiYuHuang
 	email = b98170022@gmail.com
-
-

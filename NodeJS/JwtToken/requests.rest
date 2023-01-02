@@ -1,0 +1,31 @@
+GET http://localhost:3001/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmF5IiwiaWF0IjoxNjY4NjAxMDEwLCJleHAiOjE2Njg2MDEwMjV9.eTLXzrCM1OCUGjdK0N1hLyjFHRnMDj95AtU34Vk0odo
+
+###
+
+DELETE http://localhost:4001/logout 
+Content-Type: application/json
+
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmF5IiwiaWF0IjoxNjY4NjAwOTAzfQ.TP8XI0aRsyt3ScF54_gdr74QZklUAC7-v3mh6_T-YYE"
+}
+
+###
+
+POST http://localhost:4001/token 
+Content-Type: application/json
+
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmF5IiwiaWF0IjoxNjY4NjAwOTAzfQ.TP8XI0aRsyt3ScF54_gdr74QZklUAC7-v3mh6_T-YYE"
+}
+
+###
+
+POST http://localhost:4001/login
+Content-Type: application/json
+
+{
+    "username": "Ray"
+}
+
+###
