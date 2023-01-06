@@ -36,10 +36,10 @@ git pull
 //下載 解決衝突
 git pull --no-rebase 
 
-//查看分支
+//查看本地分支
 git branch
-git br 縮寫
-git br -r
+//查看遠端分支
+git branch -r
 
 //創建分支
 git branch <branchName>
@@ -58,10 +58,16 @@ git pull
 git checkout "main"
 //合併
 git merge <要合併的分支>
-//刪除分支
+//刪除分支本地
 git branch -d <branch>
+//刪除分支遠端
 git push <remote> --delete <branch>
 EX git push origin --delete fix/authentication
+
+//檢查遠端分支
+git fetch 
+//更新遠端分支
+git rebase <branch>
 ---------------------------------
 .gitconfig 檔案加入&縮寫
 [alias]
