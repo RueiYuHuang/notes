@@ -68,6 +68,11 @@ EX git push origin --delete fix/authentication
 git fetch 
 //更新遠端分支
 git rebase <branch>
+
+//取消分支
+git revert <commit>
+ 編輯 i
+退出儲存 :wq
 ---------------------------------
 .gitconfig 檔案加入&縮寫
 [alias]
