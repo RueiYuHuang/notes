@@ -30,6 +30,7 @@ git log
 
 //上傳
 git push 
+git push --set-upstream origin <branchName>
 
 //下載
 git pull 
@@ -50,7 +51,19 @@ git switch <branchName>
 
 //協做檔案遠端下載
 git clone <link>
- 
+
+---重新命名 Git 遠端分支---
+1.在本地重新命名分支名稱
+git branch -m <New_Branch_Name>
+# OR
+git branch -m <Old_Branch_Name> <New_Branch_Name>
+
+2.將分支名稱的更改推送到遠端倉庫
+git push origin :<Old_Branch_Name> <New_Branch_Name>
+
+3.設定本地分支以跟蹤同名的遠端倉庫，為此，我們需要使用以下語法
+git push --set-upstream origin <New_Branch_Name>
+
 ---合併分支方法--
 //檢查更新
 git pull
