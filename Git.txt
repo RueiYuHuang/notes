@@ -52,6 +52,25 @@ git switch <branchName>
 //協做檔案遠端下載
 git clone <link>
 
+//追蹤遠端分支 到 本地分支
+git branch --set-upstream-to=origin/feature/ui_fixed feature/ui_fixed
+
+//移除在staged的檔案
+git restore --staged middleware/auth-app.js
+//移除在staged的所有檔案 
+git restore --staged :/
+
+--Stash(暫存)--
+// 暫時儲存現狀的操作
+git stash save
+//顯示暫存清單
+git stash list
+// 恢復暫存的操作
+git stash pop
+// 刪除暫存的操作
+git stash drop
+// 刪除所有暫存的操作
+git stash clear
 ---重新命名 Git 遠端分支---
 1.在本地重新命名分支名稱
 git branch -m <New_Branch_Name>
