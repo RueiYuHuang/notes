@@ -6,7 +6,6 @@ git init
 
 //git 檔案狀態 是否更動
 git status
-git st 縮寫
 
 //看檔案變更
 git diff <fileName>
@@ -17,48 +16,62 @@ git add <fileName>
 //取消暫存
 git rm --cached <fileName>
 
-
-//建立新版本
+// 建立新版本
 git commit -m ""
-git ci 縮寫 
-//已加入的檔案建立新版本
+
+// 變動的檔案直接(不包括新增的檔案)建立新版本
 git commit -am ""
 
-
-//查看版本更新
+// 查看版本更新
 git log
 
-//上傳
+// 推送
 git push 
+// 推送 並跟縱到遠端某分支
 git push --set-upstream origin <branchName>
+git push -u origin <branchName>
 
-//下載
+// 下載
 git pull 
-//下載 解決衝突
+// 下載 解決衝突
 git pull --no-rebase 
 
-//查看本地分支
+// 查看本地分支
 git branch
-//查看遠端分支
+// 查看遠端分支
 git branch -r
 
-//創建分支
+// 創建分支
 git branch <branchName>
 
-//切換分支
+// 切換分支
 git checkout <branchName>
 git switch <branchName>
 
-//協做檔案遠端下載
+// 協做檔案遠端下載
 git clone <link>
 
-//追蹤遠端分支 到 本地分支
+// 追蹤遠端分支 到 本地分支
 git branch --set-upstream-to=origin/feature/ui_fixed feature/ui_fixed
 
-//移除在staged的檔案
+// 移除在staged的檔案
 git restore --staged middleware/auth-app.js
-//移除在staged的所有檔案 
+// 移除在staged的所有檔案 
 git restore --staged :/
+
+// 檢查遠端分支
+git fetch 
+
+// 更新遠端分支到目前分支為根版本
+git rebase <branch>
+
+// 切換commit 
+git checkout <commit>
+
+// 修改commit
+git revert <commit>
+編輯 i
+退出儲存 :wq
 
 --Stash(暫存)--
 // 暫時儲存現狀的操作
@@ -71,6 +84,7 @@ git stash pop
 git stash drop
 // 刪除所有暫存的操作
 git stash clear
+
 ---重新命名 Git 遠端分支---
 1.在本地重新命名分支名稱
 git branch -m <New_Branch_Name>
@@ -84,27 +98,28 @@ git push origin :<Old_Branch_Name> <New_Branch_Name>
 git push --set-upstream origin <New_Branch_Name>
 
 ---合併分支方法--
-//檢查更新
+// 檢查更新
 git pull
-//切換回主支
+// 切換回主支
 git checkout "main"
-//合併
+// 合併
 git merge <要合併的分支>
-//刪除分支本地
+// 刪除分支本地
 git branch -d <branch>
-//刪除分支遠端
+// 刪除分支遠端
 git push <remote> --delete <branch>
-EX git push origin --delete fix/authentication
+EX. git push origin --delete fix/authentication
 
-//檢查遠端分支
-git fetch 
-//更新遠端分支
-git rebase <branch>
+--取消commit--
+// 刪除改動
+git reset --hard <commit>
+// 變動保留在暫存區
+git reset --soft <commit>
+// 變動不保留在暫存區
+git reset --mixed <commit>
+// 相對於目前版本(^為退幾次版本)
+git reset HEAD^
 
-//取消分支
-git revert <commit>
- 編輯 i
-退出儲存 :wq
 ---------------------------------
 .gitconfig 檔案加入&縮寫
 [alias]
@@ -112,9 +127,10 @@ git revert <commit>
 	br = branch
 	ci = commit
 	st = status
+	sw = switch
       lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
 	l = log --oneline --graph
       la = log --all --oneline --decorate --graph
 [user]
-	name = RueiYuHuang
-	email = b98170022@gmail.com
+	name = XXXX
+	email = XXXX@gmail.com
